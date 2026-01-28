@@ -517,7 +517,7 @@ const App: React.FC = () => {
             <div className="relative group">
               <button 
                 onClick={() => setIsDashboardOpen(true)} 
-                className="w-12 h-12 flex items-center justify-center text-white bg-[#3BB19B] hover:bg-[#2ea38d] hover:scale-110 active:scale-95 transition-all rounded-full border-2 border:white/80 shadow-lg relative"
+                className="w-12 h-12 flex items-center justify-center text-white bg-[#3BB19B] hover:bg-[#2ea38d] hover:scale-110 active:scale-95 transition-all rounded-full border-2 border-white/80 shadow-lg relative"
               >
                 <svg className="w-6 h-6" fill={wishlist.length > 0 ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                 {wishlist.length > 0 && (
