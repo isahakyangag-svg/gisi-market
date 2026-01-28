@@ -49,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <div 
   className={`group relative cursor-pointer p-5 bg-white/40 ... flex flex-col 
-              w-[320px] h-[800px]   // ← фиксируем размер
+              w-[320px] h-[700px]   // ← фиксируем размер
               ${containerClassName || ''}`}
   onClick={() => onClick(product)}
 >
