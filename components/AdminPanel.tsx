@@ -780,37 +780,38 @@ const handleDeleteProduct = (productId: string) => {
                 <tr><th className="px-8 py-6">Товар</th><th className="px-4 py-6">SKU</th><th className="px-4 py-6">Цена</th><th className="px-4 py-6">Склад</th><th className="px-8 py-6 text-right">Действия</th></tr>
              </thead>
              <tbody className="divide-y divide-white/5">
-                {products.map(p => (
-                  <tr key={p.id} className="hover:bg-white/5 transition-colors group">
-                     <td className="px-8 py-5 flex items-center gap-4">
-                        <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
-                        <span className="text-sm font-black text-white">{p.name}</span>
-                     </td>
-                     <td className="px-4 py-5 text-xs text-slate-400 font-mono uppercase">{p.sku}</td>
-                     <td className="px-4 py-5 text-sm font-black text-indigo-400">${p.price}</td>
-                     <td className="px-4 py-5">
-                        <span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${p.stock < 5 ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
-                           {p.stock} шт
-                        </span>
-                     <td className="px-8 py-5 text-right flex justify-end gap-2">
-  <button
-    onClick={() => { setEditingProduct(p); setIsProductModalOpen(true); }}
-    className="p-2 text-slate-500 hover:text-[#3BB19B] transition-colors"
-    title="Редактировать"
-  >
-    ✏️
-  </button>
+{products.map(p => (
+  <tr key={p.id} className="hover:bg-white/5 transition-colors group">
+    <td className="px-8 py-5 flex items-center gap-4">
+      <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
+      <span className="text-sm font-black text-white">{p.name}</span>
+    </td>
+    <td className="px-4 py-5 text-xs text-slate-400 font-mono uppercase">{p.sku}</td>
+    <td className="px-4 py-5 text-sm font-black text-indigo-400">${p.price}</td>
+    <td className="px-4 py-5">
+      <span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${p.stock < 5 ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
+        {p.stock} шт
+      </span>
+    </td>
+    <td className="px-8 py-5 text-right flex justify-end gap-2">
+      <button
+        onClick={() => { setEditingProduct(p); setIsProductModalOpen(true); }}
+        className="p-2 text-slate-500 hover:text-[#3BB19B] transition-colors"
+        title="Редактировать"
+      >
+        ✏️
+      </button>
 
-  <button
-    onClick={() => handleDeleteProduct(p.id)}
-    className="p-2 text-rose-400 hover:text-rose-500 transition-colors"
-    title="Удалить товар"
-  >
-    🗑️
-  </button>
-</td>
-
-                ))}
+      <button
+        onClick={() => handleDeleteProduct(p.id)}
+        className="p-2 text-rose-400 hover:text-rose-500 transition-colors"
+        title="Удалить товар"
+      >
+        🗑️
+      </button>
+    </td>
+  </tr>
+))}
              </tbody>
           </table>
        </div>
