@@ -116,7 +116,9 @@ export const Footer: React.FC<FooterProps> = ({ settings, onPageClick, language 
              <div className="space-y-6">
                 <div>
                    <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">{texts.phone}</p>
-                   <p className="text-3xl font-black text-slate-950 tracking-tighter italic">8 800 123-45-67</p>
+                   <p className="text-3xl font-black text-slate-950 tracking-tighter italic">
+  {settings.footer?.supportPhone || '8 800 123-45-67'}
+</p>
                 </div>
                 <div className="inline-block px-4 py-2 bg-slate-100 rounded-xl">
                    <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{texts.supportTag}</p>
