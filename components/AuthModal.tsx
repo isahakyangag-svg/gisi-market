@@ -82,7 +82,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
     }, 1500);
   };
 
-  // Вход
+  // Вход (только админ admin / 1)
   const handleLoginSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
@@ -114,26 +114,15 @@ export const AuthModal: React.FC<AuthModalProps> = ({
         }
 
         onLogin(admin);
+        onClose();
       } else {
-        // Обычный пользователь
-        const user: User = {
-          id: 'u-' + Date.now(),
-          name: email.split('@')[0] || 'Пользователь',
-          email: email.includes('@') ? email : `${email}@mail.com`,
-          phone: loginMethod === 'phone' ? phone : '+374 77 00 00 00',
-          role: 'customer',
-          status: 'active',
-          joinedDate: new Date().toISOString(),
-          loyaltyPoints: 120,
-          loyaltyLevel: 'basic',
-          isPhoneVerified: true,
-          avatar: `https://i.pravatar.cc/150?u=${email}`,
-        };
-        onLogin(user);
+        // Любой другой логин/пароль — ошибка, пользователя не создаём
+        alert(
+          'Неверный логин или пароль. Если у вас нет аккаунта — сначала зарегистрируйтесь.'
+        );
       }
 
       setIsLoading(false);
-      onClose();
     }, 1500);
   };
 
@@ -364,7 +353,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   placeholder="Номер телефона (+374...) — не обязательно"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
-                  className="w-full px-8 py-5 bg-white/40 border border-white/60 rounded-3xl font-bold text-lg tracking-tight outline-none focus:bg-white focus:ring-4 focus:ring-[#3BB19B]/10 transition-all placeholder:text-slate-400"
+                  className="w-full px-8 py-5 bg:white/40 border border-white/60 rounded-3xl font-bold text-lg tracking-tight outline-none focus:bg-white focus:ring-4 focus:ring-[#3BB19B]/10 transition-all placeholder:text-slate-400"
                 />
                 <input
                   type="password"
@@ -372,7 +361,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-8 py-5 bg-white/40 border border-white/60 rounded-3xl font-bold text-sm outline-none focus:bg:white focus:ring-4 focus:ring-[#3BB19B]/10 transition-all placeholder:text-slate-400"
+                  className="w-full px-8 py-5 bg-white/40 border border-white/60 rounded-3xl font-bold text-sm outline-none focus:bg-white focus:ring-4 focus:ring-[#3BB19B]/10 transition-all placeholder:text-slate-400"
                 />
 
                 <div className="pt-4">
