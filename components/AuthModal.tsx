@@ -92,7 +92,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       if (email.toLowerCase() === 'admin' && password === '1') {
         const admin: User = {
           id: 'admin-01',
-          name: 'Administrator',
+          name: 'GISI ADMIN',
           email: 'admin@gisimarket.am',
           phone: '+374 99 000 000',
           role: 'admin',
