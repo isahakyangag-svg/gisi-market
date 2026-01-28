@@ -925,10 +925,10 @@ const renderSettings = () => (
   );
 
   return (
-    <div className="fixed inset-0 bg-[#0F172A] flex overflow-hidden no-print z-[1000] text-slate-900">
+    <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-slate-900">
       
       {/* SIDEBAR */}
-      <aside className="w-64 bg-[#0B1120] border-r border-white/5 flex flex-col shrink-0">
+      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0">
         <div className="p-8 mb-4">
 <button
   onClick={onExit}
@@ -982,7 +982,7 @@ const renderSettings = () => (
       <main className="flex-grow flex flex-col min-w-0 bg-[#0F172A]">
         
         {/* GLOBAL TOP BAR */}
-        <header className="h-20 bg-[#0B1120]/80 backdrop-blur-xl border-b border-white/5 px-10 flex items-center justify-between shrink-0">
+        <header className="h-20 bg-white border-b border-slate-200 px-10 flex items-center justify-between shrink-0">
            <div className="flex-grow max-w-2xl relative">
               <input 
                 type="text" placeholder="Быстрый поиск заказов, товаров, клиентов..." 
