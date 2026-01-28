@@ -454,7 +454,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col relative p-4 md:p-8">
+    <div className="min-h-screen flex flex-col relative p-4 md:p-8 text-black">
       <DynamicStyles settings={settings} />
       <div className="fixed inset-0 z-[-1] no-print">
         <img src={currentBackgroundImage} className="w-full h-full object-cover transition-all duration-[2000ms]" alt="фон" />
