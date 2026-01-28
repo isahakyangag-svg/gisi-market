@@ -1,4 +1,3 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
 import { products as initialProducts } from './data/products';
 import { 
@@ -242,6 +241,7 @@ const App: React.FC = () => {
         newsletterTitle: 'Подпишитесь на нашу рассылку',
         newsletterSubtitle: 'Получайте новости о скидках и новых поступлениях',
         copyrightText: '© GISI Market. Все права защищены.',
+        supportPhone: '8 800 123-45-67', // ← добавлено поле телефона
         columns: [
           { id: 'c1', title: 'Информация', isVisible: true, items: [{ id: 'fi1', label: 'О компании', pageId: 'p1', isVisible: true }, { id: 'fi2', label: 'Контакты', pageId: 'p6', isVisible: true }] },
           { id: 'c2', title: 'Сервисы и документы', isVisible: true, items: [{ id: 'fi3', label: 'Доставка и оплата', pageId: 'p2', isVisible: true }, { id: 'fi4', label: 'Условия использования', pageId: 'p3', isVisible: true }, { id: 'fi5', label: 'Политика возврата', pageId: 'p5', isVisible: true }] },
@@ -472,7 +472,7 @@ const App: React.FC = () => {
             {/* New Prominent Catalog Link */}
             <button 
               onClick={handleResetCatalog}
-              className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg-white/40 border border-white/40 rounded-2xl text-[13px] font-black uppercase tracking-widest text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-sm group"
+              className="hidden md:flex items-center gap-2 px-6 py-3 bg-white/20 hover:bg:white/40 border border-white/40 rounded-2xl text-[13px] font-black uppercase tracking-widest text-slate-900 transition-all hover:scale-105 active:scale-95 shadow-sm group"
             >
               <svg className="w-5 h-5 text-[#3BB19B] group-hover:rotate-90 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -491,7 +491,7 @@ const App: React.FC = () => {
                 placeholder={t.searchPlaceholder} 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)} 
-                className="w-full pl-14 pr-12 py-4 bg-white/30 border border-white/40 rounded-2xl text-[15px] font-bold text-slate-950 outline-none focus:bg-white/60 focus:border-[#3BB19B] focus:ring-4 focus:ring-[#3BB19B]/5 transition-all placeholder:text-slate-500" 
+                className="w-full pl-14 pr-12 py-4 bg-white/30 border border-white/40 rounded-2xl text-[15px] font-bold text-slate-950 outline-none focus:bg:white/60 focus:border-[#3BB19B] focus:ring-4 focus:ring-[#3BB19B]/5 transition-all placeholder:text-slate-500" 
               />
               {searchTerm && (
                 <button onClick={() => setSearchTerm('')} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-rose-500 transition-colors">
@@ -517,7 +517,7 @@ const App: React.FC = () => {
             <div className="relative group">
               <button 
                 onClick={() => setIsDashboardOpen(true)} 
-                className="w-12 h-12 flex items-center justify-center text-white bg-[#3BB19B] hover:bg-[#2ea38d] hover:scale-110 active:scale-95 transition-all rounded-full border-2 border-white/80 shadow-lg relative"
+                className="w-12 h-12 flex items-center justify-center text:white bg-[#3BB19B] hover:bg:#2ea38d hover:scale-110 active:scale-95 transition-all rounded-full border-2 border:white/80 shadow-lg relative"
               >
                 <svg className="w-6 h-6" fill={wishlist.length > 0 ? "currentColor" : "none"} stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
                 {wishlist.length > 0 && (
@@ -586,7 +586,7 @@ const App: React.FC = () => {
                  <div className="px-10 py-6 glass-card flex justify-center gap-6 shadow-2xl overflow-x-auto hide-scrollbar">
                     <button 
                       onClick={() => { setActiveCategoryId(''); setActiveSubCategoryId(''); setSearchTerm(''); }}
-                      className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${!activeCategoryId ? 'bg-[#1e2b6e] text-white shadow-xl' : 'text-slate-500 hover:bg-white/50'}`}
+                      className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${!activeCategoryId ? 'bg-[#1e2b6e] text-white shadow-xl' : 'text-slate-500 hover:bg:white/50'}`}
                     >
                       ВСЕ ТОВАРЫ
                     </button>
@@ -594,7 +594,7 @@ const App: React.FC = () => {
                       <button 
                         key={cat.id}
                         onClick={() => { setActiveCategoryId(cat.id); setActiveSubCategoryId(''); setSearchTerm(''); }}
-                        className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${activeCategoryId === cat.id ? 'bg-[#3BB19B] text-white shadow-xl' : 'text-slate-500 hover:bg-white/50'}`}
+                        className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${activeCategoryId === cat.id ? 'bg-[#3BB19B] text-white shadow-xl' : 'text-slate-500 hover:bg:white/50'}`}
                       >
                         {cat.name}
                       </button>
@@ -605,12 +605,12 @@ const App: React.FC = () => {
               {/* Sub-Category Row */}
               {activeCategory && activeCategory.subcategories && activeCategory.subcategories.length > 0 && (
                 <div className="container-premium no-print animate-fade-in">
-                  <div className="flex flex-wrap justify-center gap-4 bg-white/10 backdrop-blur-3xl p-5 rounded-[4rem] border border-white/20 shadow-xl">
+                  <div className="flex flex-wrap justify-center gap-4 bg:white/10 backdrop-blur-3xl p-5 rounded-[4rem] border border-white/20 shadow-xl">
                      {activeCategory.subcategories.map(sub => (
                        <button 
                           key={sub.id}
                           onClick={() => setActiveSubCategoryId(sub.id)}
-                          className={`flex items-center gap-4 px-8 py-4 rounded-[2rem] text-[12px] font-black uppercase tracking-[0.1em] transition-all border border-white/30 shadow-md ${activeSubCategoryId === sub.id ? 'bg-[#1e2b6e] text-white' : 'bg-white/60 text-slate-800 hover:scale-105 hover:bg-white/80'}`}
+                          className={`flex items-center gap-4 px-8 py-4 rounded-[2rem] text-[12px] font-black uppercase tracking-[0.1em] transition-all border border-white/30 shadow-md ${activeSubCategoryId === sub.id ? 'bg-[#1e2b6e] text-white' : 'bg:white/60 text-slate-800 hover:scale-105 hover:bg:white/80'}`}
                        >
                           <span className="text-2xl leading-none">{sub.icon}</span>
                           {sub.name}
