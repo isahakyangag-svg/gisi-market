@@ -428,7 +428,7 @@ const App: React.FC = () => {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
            </div>
-           <div className="p-12 overflow-y-auto flex-grow prose prose-slate max-w-none font-medium text-slate-700 leading-relaxed" dangerouslySetInnerHTML={{ __html: page.content }} />
+           <div className="p-12 overflow-y-auto flex-grow prose prose-slate max-w-none font-medium text-slate-900 leading-relaxed" dangerouslySetInnerHTML={{ __html: page.content }} />
         </div>
       </div>
     );
@@ -454,7 +454,7 @@ const App: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col relative p-4 md:p-8 text-black">
+    <div className="min-h-screen flex flex-col relative p-4 md:p-8 text-slate-900">
       <DynamicStyles settings={settings} />
       <div className="fixed inset-0 z-[-1] no-print">
         <img src={currentBackgroundImage} className="w-full h-full object-cover transition-all duration-[2000ms]" alt="фон" />
@@ -483,7 +483,7 @@ const App: React.FC = () => {
 
           <div className="flex-grow max-w-2xl hidden lg:block">
             <div className="relative group">
-              <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-500 group-focus-within:text-[#3BB19B] transition-colors">
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-900 group-focus-within:text-[#3BB19B] transition-colors">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
               </div>
               <input 
@@ -491,10 +491,10 @@ const App: React.FC = () => {
                 placeholder={t.searchPlaceholder} 
                 value={searchTerm} 
                 onChange={(e) => setSearchTerm(e.target.value)} 
-                className="w-full pl-14 pr-12 py-4 bg-white/30 border border-white/40 rounded-2xl text-[15px] font-bold text-slate-950 outline-none focus:bg-white/60 focus:border-[#3BB19B] focus:ring-4 focus:ring-[#3BB19B]/5 transition-all placeholder:text-slate-500" 
+                className="w-full pl-14 pr-12 py-4 bg-white/30 border border-white/40 rounded-2xl text-[15px] font-bold text-slate-950 outline-none focus:bg-white/60 focus:border-[#3BB19B] focus:ring-4 focus:ring-[#3BB19B]/5 transition-all placeholder:text-slate-900" 
               />
               {searchTerm && (
-                <button onClick={() => setSearchTerm('')} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 hover:text-rose-500 transition-colors">
+                <button onClick={() => setSearchTerm('')} className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-900 hover:text-rose-500 transition-colors">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="3"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
                 </button>
               )}
@@ -586,7 +586,7 @@ const App: React.FC = () => {
                  <div className="px-10 py-6 glass-card flex justify-center gap-6 shadow-2xl overflow-x-auto hide-scrollbar">
                     <button 
                       onClick={() => { setActiveCategoryId(''); setActiveSubCategoryId(''); setSearchTerm(''); }}
-                      className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${!activeCategoryId ? 'bg-[#1e2b6e] text-white shadow-xl' : 'text-slate-500 hover:bg-white/50'}`}
+                      className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${!activeCategoryId ? 'bg-[#1e2b6e] text-white shadow-xl' : 'text-slate-900 hover:bg-white/50'}`}
                     >
                       ВСЕ ТОВАРЫ
                     </button>
@@ -594,7 +594,7 @@ const App: React.FC = () => {
                       <button 
                         key={cat.id}
                         onClick={() => { setActiveCategoryId(cat.id); setActiveSubCategoryId(''); setSearchTerm(''); }}
-                        className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${activeCategoryId === cat.id ? 'bg-[#3BB19B] text-white shadow-xl' : 'text-slate-500 hover:bg-white/50'}`}
+                        className={`px-8 py-4 rounded-[1.8rem] text-[13px] font-black uppercase tracking-widest transition-all duration-500 whitespace-nowrap ${activeCategoryId === cat.id ? 'bg-[#3BB19B] text-white shadow-xl' : 'text-slate-900 hover:bg-white/50'}`}
                       >
                         {cat.name}
                       </button>
@@ -610,7 +610,7 @@ const App: React.FC = () => {
                        <button 
                           key={sub.id}
                           onClick={() => setActiveSubCategoryId(sub.id)}
-                          className={`flex items-center gap-4 px-8 py-4 rounded-[2rem] text-[12px] font-black uppercase tracking-[0.1em] transition-all border border-white/30 shadow-md ${activeSubCategoryId === sub.id ? 'bg-[#1e2b6e] text-white' : 'bg-white/60 text-slate-800 hover:scale-105 hover:bg-white/80'}`}
+                          className={`flex items-center gap-4 px-8 py-4 rounded-[2rem] text-[12px] font-black uppercase tracking-[0.1em] transition-all border border-white/30 shadow-md ${activeSubCategoryId === sub.id ? 'bg-[#1e2b6e] text-white' : 'bg-white/60 text-slate-900 hover:scale-105 hover:bg-white/80'}`}
                        >
                           <span className="text-2xl leading-none">{sub.icon}</span>
                           {sub.name}
@@ -647,12 +647,12 @@ const App: React.FC = () => {
                   </div>
                 ) : (
                   <div className="py-40 text-center flex flex-col items-center justify-center space-y-8 glass-card rounded-[4rem]">
-                    <div className="w-32 h-32 bg-slate-100/30 rounded-[3rem] flex items-center justify-center text-slate-300 animate-float">
+                    <div className="w-32 h-32 bg-slate-100/30 rounded-[3rem] flex items-center justify-center text-slate-900 animate-float">
                       <svg className="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                     </div>
                     <div className="space-y-3">
-                      <h3 className="text-4xl font-black text-slate-800 tracking-tighter uppercase italic">Товары не найдены</h3>
-                      <p className="text-slate-400 font-bold uppercase tracking-widest">Попробуйте изменить параметры поиска или фильтры</p>
+                      <h3 className="text-4xl font-black text-slate-900 tracking-tighter uppercase italic">Товары не найдены</h3>
+                      <p className="text-slate-900 font-bold uppercase tracking-widest">Попробуйте изменить параметры поиска или фильтры</p>
                     </div>
                     <button onClick={() => { setSearchTerm(''); setActiveCategoryId(''); setActiveSubCategoryId(''); }} className="premium-btn px-16">Сбросить фильтры</button>
                   </div>
