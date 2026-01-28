@@ -695,73 +695,141 @@ const handleDeleteProduct = (productId: string) => {
     </div>
   );
 
-  const renderAnalytics = () => (
-    <div className="p-8 space-y-10 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
-       <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Аналитика и отчёты</h2>
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
-             <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">Распределение по брендам</h4>
-             <div className="space-y-4">
-                {Array.from(new Set(products.map(p => p.brand))).map(brand => {
-                   const count = products.filter(p => p.brand === brand).length;
-                   const perc = Math.round((count / products.length) * 100);
-                   return (
-                     <div key={brand} className="space-y-1">
-                        <div className="flex justify-between text-[10px] font-black uppercase text-white tracking-widest">
-                           <span>{brand}</span>
-                           <span>{count} шт. ({perc}%)</span>
-                        </div>
-                        <div className="h-1 bg-slate-800 rounded-full overflow-hidden">
-                           <div style={{ width: `${perc}%` }} className="h-full bg-indigo-500" />
-                        </div>
-                     </div>
-                   );
-                })}
-             </div>
-          </div>
-          <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg md:col-span-2">
-             <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">Динамика прибыли</h4>
-             <div className="h-64 flex items-end gap-3 px-4">
-                {[10, 40, 25, 60, 45, 80, 50, 95, 70, 40, 85, 100].map((v, i) => (
-                  <div key={i} className="flex-grow bg-emerald-500/20 rounded-t-lg relative group transition-all hover:bg-emerald-500/40">
-                     <div style={{ height: `${v}%` }} className="w-full bg-emerald-500 rounded-t-lg shadow-xl shadow-emerald-500/10" />
-                  </div>
-                ))}
-             </div>
-          </div>
-       </div>
+const renderSettings = () => (
+  <div className="p-10 animate-fade-in space-y-10 overflow-y-auto max-h-screen hide-scrollbar">
+    <div className="flex items-center justify-between">
+      <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">
+        Настройки системы
+      </h2>
+      <button
+        onClick={() => {
+          alert('Настройки успешно сохранены в базе данных');
+          addAuditLog('Обновление настроек', 'Обновлены основные настройки системы', 'settings');
+        }}
+        className="px-10 py-4 bg-[#3BB19B] text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-teal-500/20"
+      >
+        Сохранить всё
+      </button>
     </div>
-  );
 
-  const renderSettings = () => (
-    <div className="p-10 animate-fade-in space-y-10 overflow-y-auto max-h-screen hide-scrollbar">
-       <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">Настройки системы</h2>
-          <button 
-            onClick={() => {
-               alert('Настройки успешно сохранены в базе данных');
-               addAuditLog('Обновление настроек', 'Обновлены основные настройки системы', 'settings');
-            }}
-            className="px-10 py-4 bg-[#3BB19B] text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-teal-500/20"
-          >Сохранить всё</button>
-       </div>
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
-             <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">Основные данные</h4>
-             <div className="space-y-6">
-                <div className="space-y-2">
-                   <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">Название магазина</label>
-                   <input 
-                     type="text" value={settings.storeName} 
-                     onChange={e => onUpdateSettings({...settings, storeName: e.target.value})}
-                     className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B] transition-all" 
-                   />
-                </div>
-             </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* КАРТОЧКА 1 — Основные данные */}
+      <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
+        <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">
+          Основные данные
+        </h4>
+
+        <div className="space-y-6">
+          <div className="space-y-2">
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+              Название магазина
+            </label>
+            <input
+              type="text"
+              value={settings.storeName}
+              onChange={(e) =>
+                onUpdateSettings({
+                  ...settings,
+                  storeName: e.target.value,
+                })
+              }
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B] transition-all"
+            />
           </div>
-       </div>
+        </div>
+      </div>
+
+      {/* КАРТОЧКА 2 — ПОДВАЛ САЙТА (ТВОЙ КОД) */}
+      <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
+        <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">
+          Подвал сайта
+        </h4>
+
+        <div className="space-y-6">
+          <div>
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+              Заголовок рассылки
+            </label>
+            <input
+              type="text"
+              value={settings.footer.newsletterTitle}
+              onChange={(e) =>
+                onUpdateSettings({
+                  ...settings,
+                  footer: {
+                    ...settings.footer,
+                    newsletterTitle: e.target.value,
+                  },
+                })
+              }
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+              Подзаголовок рассылки
+            </label>
+            <input
+              type="text"
+              value={settings.footer.newsletterSubtitle}
+              onChange={(e) =>
+                onUpdateSettings({
+                  ...settings,
+                  footer: {
+                    ...settings.footer,
+                    newsletterSubtitle: e.target.value,
+                  },
+                })
+              }
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+              Телефон поддержки
+            </label>
+            <input
+              type="text"
+              value={settings.footer.supportPhone}
+              onChange={(e) =>
+                onUpdateSettings({
+                  ...settings,
+                  footer: {
+                    ...settings.footer,
+                    supportPhone: e.target.value,
+                  },
+                })
+              }
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+            />
+          </div>
+
+          <div>
+            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+              Копирайт
+            </label>
+            <input
+              type="text"
+              value={settings.footer.copyrightText}
+              onChange={(e) =>
+                onUpdateSettings({
+                  ...settings,
+                  footer: {
+                    ...settings.footer,
+                    copyrightText: e.target.value,
+                  },
+                })
+              }
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+            />
+          </div>
+        </div>
+      </div>
     </div>
-  );
+  </div>
+);
 
   const renderProductsList = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
