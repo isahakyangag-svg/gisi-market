@@ -199,12 +199,12 @@ const handleDeleteProduct = (productId: string) => {
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group">
-          <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-2">Общий объем продаж</p>
+          <p className="text-slate-900 text-xs font-black uppercase tracking-widest mb-2">Общий объем продаж</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-3xl font-black text-white italic tracking-tighter">{totalRevenue.toLocaleString()} {settings.currency}</h3>
             <span className="text-emerald-400 text-[10px] font-black uppercase">+12% Сегодня</span>
           </div>
-          <div className="mt-4 flex justify-between text-[10px] font-bold text-slate-500 uppercase tracking-widest">
+          <div className="mt-4 flex justify-between text-[10px] font-bold text-slate-900 uppercase tracking-widest">
             <span>На этой неделе: 1,235</span>
             <span>Ср. чек: ${avgOrderValue}</span>
           </div>
@@ -215,7 +215,7 @@ const handleDeleteProduct = (productId: string) => {
 
         <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg">
           <div className="flex justify-between items-start mb-4">
-             <p className="text-slate-400 text-xs font-black uppercase tracking-widest">Управление складом</p>
+             <p className="text-slate-900 text-xs font-black uppercase tracking-widest">Управление складом</p>
              <button className="text-[10px] text-indigo-400 font-black uppercase hover:underline">Отчет</button>
           </div>
           <div className="space-y-4">
@@ -232,20 +232,20 @@ const handleDeleteProduct = (productId: string) => {
 
         <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg flex flex-col justify-between">
           <div className="flex justify-between items-start mb-4">
-             <p className="text-slate-400 text-xs font-black uppercase tracking-widest">Детали заказа</p>
+             <p className="text-slate-900 text-xs font-black uppercase tracking-widest">Детали заказа</p>
              <span className="text-[10px] bg-emerald-500/10 text-emerald-500 px-2 py-1 rounded-lg font-black uppercase tracking-widest">Новый Оплачен</span>
           </div>
           <div className="space-y-3">
              {orders[0] ? (
                <>
                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-xl text-slate-400 font-bold">👤</div>
+                    <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-xl text-slate-900 font-bold">👤</div>
                     <div>
                        <p className="text-sm font-black text-white">{orders[0].customerName}</p>
-                       <p className="text-[10px] text-slate-500 font-bold">{orders[0].customerEmail}</p>
+                       <p className="text-[10px] text-slate-900 font-bold">{orders[0].customerEmail}</p>
                     </div>
                  </div>
-                 <p className="text-xs text-slate-300 font-medium">Заказ {orders[0].id} <span className="float-right font-black">{orders[0].total} {settings.currency}</span></p>
+                 <p className="text-xs text-slate-900 font-medium">Заказ {orders[0].id} <span className="float-right font-black">{orders[0].total} {settings.currency}</span></p>
                  <button 
                    onClick={() => handlePrintInvoice(orders[0])}
                    className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-indigo-600/20 transition-all active:scale-95"
@@ -267,7 +267,7 @@ const handleDeleteProduct = (productId: string) => {
            <div className="flex justify-between items-center mb-10">
               <h4 className="text-xl font-black text-white uppercase italic tracking-tighter">Обзор продаж</h4>
               <div className="flex gap-2 bg-slate-900/50 p-1 rounded-xl">
-                 <button className="px-4 py-1.5 text-slate-400 text-[9px] font-black rounded-lg hover:text-white transition-colors">День</button>
+                 <button className="px-4 py-1.5 text-slate-900 text-[9px] font-black rounded-lg hover:text-white transition-colors">День</button>
                  <button className="px-4 py-1.5 bg-indigo-600 text-white text-[9px] font-black rounded-lg shadow-lg">Неделя</button>
               </div>
            </div>
@@ -283,14 +283,14 @@ const handleDeleteProduct = (productId: string) => {
                 </div>
               ))}
            </div>
-           <div className="mt-8 flex justify-between text-[10px] font-black text-slate-500 uppercase px-2 tracking-tighter">
+           <div className="mt-8 flex justify-between text-[10px] font-black text-slate-900 uppercase px-2 tracking-tighter">
               <span>Янв</span><span>Фев</span><span>Мар</span><span>Апр</span><span>Май</span><span>Июн</span><span>Июл</span><span>Авг</span><span>Сен</span><span>Окт</span><span>Ноя</span><span>Дек</span>
            </div>
         </div>
 
         <div className="lg:col-span-4 space-y-6">
            <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
-              <h4 className="text-slate-400 text-xs font-black uppercase tracking-widest mb-8">Топ товаров</h4>
+              <h4 className="text-slate-900 text-xs font-black uppercase tracking-widest mb-8">Топ товаров</h4>
               <div className="space-y-6">
                  {products.slice(0, 3).map(p => (
                    <div key={p.id} className="flex items-center gap-4 group cursor-pointer">
@@ -299,7 +299,7 @@ const handleDeleteProduct = (productId: string) => {
                       </div>
                       <div className="flex-grow overflow-hidden">
                          <p className="text-xs font-black text-white truncate uppercase tracking-tighter">{p.name}</p>
-                         <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest">{p.brand}</p>
+                         <p className="text-[9px] text-slate-900 font-bold uppercase tracking-widest">{p.brand}</p>
                       </div>
                       <span className="text-xs font-black text-indigo-400 italic">${p.price}</span>
                    </div>
@@ -309,7 +309,7 @@ const handleDeleteProduct = (productId: string) => {
 
            <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
               <div className="flex justify-between items-center mb-8">
-                <h4 className="text-slate-400 text-xs font-black uppercase tracking-widest">Маркетинг и акции</h4>
+                <h4 className="text-slate-900 text-xs font-black uppercase tracking-widest">Маркетинг и акции</h4>
               </div>
               <div className="space-y-4">
                  <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 group hover:border-[#3BB19B]/30 cursor-pointer transition-all">
@@ -318,7 +318,7 @@ const handleDeleteProduct = (productId: string) => {
                  </div>
                  <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 group hover:border-indigo-400/30 cursor-pointer transition-all">
                     <span className="text-[10px] font-black text-white uppercase tracking-widest italic">Spring Promo BOGO</span>
-                    <span className="text-[9px] text-slate-500 font-black uppercase tracking-widest">Завтра</span>
+                    <span className="text-[9px] text-slate-900 font-black uppercase tracking-widest">Завтра</span>
                  </div>
               </div>
            </div>
@@ -400,7 +400,7 @@ const handleDeleteProduct = (productId: string) => {
                   )}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
                      <p className="text-xs font-black text-white italic tracking-tighter truncate">{banner.title}</p>
-                     <p className="text-[9px] text-slate-400 font-bold uppercase tracking-widest mt-1">Порядок: {banner.order}</p>
+                     <p className="text-[9px] text-slate-900 font-bold uppercase tracking-widest mt-1">Порядок: {banner.order}</p>
                   </div>
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
                      <button onClick={() => { setEditingBanner(banner); setIsBannerModalOpen(true); }} className="w-8 h-8 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-[#3BB19B] transition-all">✏️</button>
@@ -410,7 +410,7 @@ const handleDeleteProduct = (productId: string) => {
                      <span className={`px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest ${getStatusBadgeClass(banner.status)}`}>{banner.status}</span>
                   </div>
                </div>
-               <div className="p-6 flex items-center justify-between text-[10px] font-black text-slate-500 uppercase tracking-widest">
+               <div className="p-6 flex items-center justify-between text-[10px] font-black text-slate-900 uppercase tracking-widest">
                   <span>Переход: {banner.animationType}</span>
                   <div className="flex gap-1">
                      {banner.imageUrl?.endsWith('.gif') && <span className="bg-indigo-500/20 text-indigo-400 px-1.5 py-0.5 rounded">GIF</span>}
@@ -427,39 +427,39 @@ const handleDeleteProduct = (productId: string) => {
                <div className="px-10 py-8 border-b border-white/5 flex items-center justify-between shrink-0">
                   <div>
                     <h3 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none">Настройка баннера</h3>
-                    <p className="text-[9px] font-black text-slate-500 uppercase tracking-[0.2em] mt-2">Визуальный редактор NovaScale™</p>
+                    <p className="text-[9px] font-black text-slate-900 uppercase tracking-[0.2em] mt-2">Визуальный редактор NovaScale™</p>
                   </div>
-                  <button onClick={() => setIsBannerModalOpen(false)} className="text-slate-500 hover:text-white transition-colors">✕</button>
+                  <button onClick={() => setIsBannerModalOpen(false)} className="text-slate-900 hover:text-white transition-colors">✕</button>
                </div>
 
                <div className="flex-grow overflow-y-auto p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 hide-scrollbar">
                   <form onSubmit={handleSaveBanner} className="space-y-6">
                      <div className="space-y-4">
                         <div className="space-y-1">
-                           <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Заголовок баннера</label>
+                           <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Заголовок баннера</label>
                            <input type="text" value={editingBanner.title || ''} onChange={e => setEditingBanner({...editingBanner, title: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]" />
                         </div>
                         <div className="space-y-1">
-                           <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Подзаголовок</label>
+                           <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Подзаголовок</label>
                            <textarea value={editingBanner.subtitle || ''} onChange={e => setEditingBanner({...editingBanner, subtitle: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B] h-24 resize-none" />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                            <div className="space-y-1">
-                              <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Текст кнопки</label>
+                              <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Текст кнопки</label>
                               <input type="text" value={editingBanner.buttonText || ''} onChange={e => setEditingBanner({...editingBanner, buttonText: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none" />
                            </div>
                            <div className="space-y-1">
-                              <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Ссылка / ID товара</label>
+                              <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Ссылка / ID товара</label>
                               <input type="text" value={editingBanner.link || ''} onChange={e => setEditingBanner({...editingBanner, link: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none" />
                            </div>
                         </div>
                      </div>
 
                      <div className="space-y-6 pt-6 border-t border-white/5">
-                        <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Анимация и Стиль</h4>
+                        <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Анимация и Стиль</h4>
                         <div className="grid grid-cols-2 gap-6">
                            <div className="space-y-1">
-                              <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Тип перехода</label>
+                              <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Тип перехода</label>
                               <select 
                                 value={editingBanner.animationType} 
                                 onChange={e => setEditingBanner({...editingBanner, animationType: e.target.value as any})}
@@ -470,7 +470,7 @@ const handleDeleteProduct = (productId: string) => {
                               </select>
                            </div>
                            <div className="space-y-1">
-                              <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Выравнивание контента</label>
+                              <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Выравнивание контента</label>
                               <select 
                                 value={editingBanner.contentAlignment} 
                                 onChange={e => setEditingBanner({...editingBanner, contentAlignment: e.target.value as any})}
@@ -484,7 +484,7 @@ const handleDeleteProduct = (productId: string) => {
                         </div>
                         <div className="space-y-2">
                            <div className="flex justify-between items-center">
-                              <label className="text-[9px] font-black text-slate-500 uppercase ml-2 tracking-widest">Прозрачность наложения: {Math.round((editingBanner.overlayOpacity || 0.4) * 100)}%</label>
+                              <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Прозрачность наложения: {Math.round((editingBanner.overlayOpacity || 0.4) * 100)}%</label>
                            </div>
                            <input 
                              type="range" min="0" max="1" step="0.1" 
@@ -497,7 +497,7 @@ const handleDeleteProduct = (productId: string) => {
                   </form>
 
                   <div className="space-y-6">
-                     <h4 className="text-[10px] font-black text-slate-400 uppercase tracking-[0.3em]">Фон баннера (Image / GIF / Video)</h4>
+                     <h4 className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em]">Фон баннера (Image / GIF / Video)</h4>
                      <div 
                        onClick={() => bannerFileRef.current?.click()}
                        className="relative aspect-video bg-black/40 rounded-[2.5rem] border-2 border-dashed border-white/10 flex flex-col items-center justify-center cursor-pointer group hover:border-[#3BB19B]/50 transition-all overflow-hidden"
@@ -515,9 +515,9 @@ const handleDeleteProduct = (productId: string) => {
                            </>
                         ) : (
                            <div className="text-center space-y-3 opacity-30 group-hover:opacity-100 transition-opacity">
-                              <span className="text-4xl text-slate-400">📁</span>
+                              <span className="text-4xl text-slate-900">📁</span>
                               <p className="text-[10px] font-black text-white uppercase tracking-widest">Кликните для загрузки с компьютера</p>
-                              <p className="text-[8px] text-slate-400 font-bold uppercase italic">Поддержка JPG, PNG, GIF, MP4</p>
+                              <p className="text-[8px] text-slate-900 font-bold uppercase italic">Поддержка JPG, PNG, GIF, MP4</p>
                            </div>
                         )}
                      </div>
@@ -526,11 +526,11 @@ const handleDeleteProduct = (productId: string) => {
                      <div className="bg-black/20 p-6 rounded-[2.5rem] border border-white/5 space-y-4">
                         <div className="flex items-center gap-3">
                            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
-                           <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Превью контента</span>
+                           <span className="text-[9px] font-black text-slate-900 uppercase tracking-widest">Превью контента</span>
                         </div>
                         <div className={`p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 ${editingBanner.contentAlignment === 'center' ? 'text-center' : editingBanner.contentAlignment === 'right' ? 'text-right' : 'text-left'}`}>
                            <h4 className="text-2xl font-black text-white italic tracking-tighter uppercase leading-none mb-3">{editingBanner.title || 'Заголовок'}</h4>
-                           <p className="text-xs text-slate-400 font-bold max-w-xs inline-block">{editingBanner.subtitle || 'Ваше описание здесь'}</p>
+                           <p className="text-xs text-slate-900 font-bold max-w-xs inline-block">{editingBanner.subtitle || 'Ваше описание здесь'}</p>
                            <div className="mt-6">
                               <button className="px-6 py-2.5 bg-[#3BB19B] text-white rounded-xl text-[9px] font-black uppercase tracking-widest">{editingBanner.buttonText || 'Перейти'}</button>
                            </div>
@@ -540,7 +540,7 @@ const handleDeleteProduct = (productId: string) => {
                </div>
 
                <div className="px-10 py-8 border-t border-white/5 bg-black/10 flex justify-end gap-4 shrink-0">
-                  <button onClick={() => setIsBannerModalOpen(false)} className="px-10 py-4 text-slate-500 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Отмена</button>
+                  <button onClick={() => setIsBannerModalOpen(false)} className="px-10 py-4 text-slate-900 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Отмена</button>
                   <button onClick={handleSaveBanner} className="px-12 py-4 bg-[#3BB19B] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all">Сохранить баннер</button>
                </div>
             </div>
@@ -563,23 +563,23 @@ const handleDeleteProduct = (productId: string) => {
        </div>
        <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
-             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">
+             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Заказ</th><th className="px-4 py-6">Клиент</th><th className="px-4 py-6">Сумма</th><th className="px-4 py-6">Статус</th><th className="px-8 py-6 text-right">Действия</th></tr>
              </thead>
              <tbody className="divide-y divide-white/5">
                 {orders.map(o => (
                   <tr key={o.id} className="hover:bg-white/5 transition-colors">
-                     <td className="px-8 py-5"><span className="text-xs font-black text-white">{o.id}</span><p className="text-[10px] text-slate-500">{o.date}</p></td>
-                     <td className="px-4 py-5"><p className="text-sm font-bold text-white">{o.customerName}</p><p className="text-[10px] text-slate-500">{o.customerEmail}</p></td>
+                     <td className="px-8 py-5"><span className="text-xs font-black text-white">{o.id}</span><p className="text-[10px] text-slate-900">{o.date}</p></td>
+                     <td className="px-4 py-5"><p className="text-sm font-bold text-white">{o.customerName}</p><p className="text-[10px] text-slate-900">{o.customerEmail}</p></td>
                      <td className="px-4 py-5 font-black text-indigo-400">{o.total.toLocaleString()} {settings.currency}</td>
                      <td className="px-4 py-5"><span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${getStatusBadgeClass(o.status)}`}>{o.status}</span></td>
                      <td className="px-8 py-5 text-right flex justify-end gap-2">
-                        <button onClick={() => handlePrintInvoice(o)} className="p-2 text-slate-400 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" strokeWidth="2"/></svg></button>
-                        <button className="p-2 text-slate-400 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeWidth="2"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2"/></svg></button>
+                        <button onClick={() => handlePrintInvoice(o)} className="p-2 text-slate-900 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" strokeWidth="2"/></svg></button>
+                        <button className="p-2 text-slate-900 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeWidth="2"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2"/></svg></button>
                      </td>
                   </tr>
                 ))}
-                {orders.length === 0 && <tr><td colSpan={5} className="py-20 text-center text-slate-500">Заказов нет</td></tr>}
+                {orders.length === 0 && <tr><td colSpan={5} className="py-20 text-center text-slate-900">Заказов нет</td></tr>}
              </tbody>
           </table>
        </div>
@@ -593,7 +593,7 @@ const handleDeleteProduct = (productId: string) => {
        </div>
        <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
-             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">
+             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Имя</th><th className="px-4 py-6">Контакты</th><th className="px-4 py-6">Регистрация</th><th className="px-4 py-6">Статус</th><th className="px-8 py-6 text-right">Управление</th></tr>
              </thead>
              <tbody className="divide-y divide-white/5">
@@ -603,8 +603,8 @@ const handleDeleteProduct = (productId: string) => {
                         <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-black text-[10px]">{c.name[0]}</div>
                         <span className="text-sm font-black text-white">{c.name}</span>
                      </td>
-                     <td className="px-4 py-5"><p className="text-xs text-white">{c.email}</p><p className="text-[10px] text-slate-500">{c.phone || 'Нет телефона'}</p></td>
-                     <td className="px-4 py-5 text-xs text-slate-400">{new Date(c.joinedDate).toLocaleDateString()}</td>
+                     <td className="px-4 py-5"><p className="text-xs text-white">{c.email}</p><p className="text-[10px] text-slate-900">{c.phone || 'Нет телефона'}</p></td>
+                     <td className="px-4 py-5 text-xs text-slate-900">{new Date(c.joinedDate).toLocaleDateString()}</td>
                      <td className="px-4 py-5"><span className="px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 text-[10px] font-black uppercase">Активен</span></td>
                      <td className="px-8 py-5 text-right"><button className="text-indigo-400 font-black text-[10px] uppercase hover:underline">Подробнее</button></td>
                   </tr>
@@ -629,14 +629,14 @@ const handleDeleteProduct = (productId: string) => {
        </div>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
-             <h4 className="text-slate-400 text-xs font-bold uppercase tracking-widest mb-6">Активные купоны</h4>
+             <h4 className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-6">Активные купоны</h4>
              <div className="space-y-4">
                 {promos.map(p => (
                    <div key={p.id} className="flex items-center justify-between p-6 bg-black/20 rounded-2xl border border-white/5 group hover:border-[#3BB19B]/30 transition-all">
                       <div>
                          <p className="text-sm font-black text-white tracking-widest mb-1">{p.code}</p>
-                         <p className="text-[10px] text-slate-500 font-bold uppercase">Скидка {p.discountValue}{p.type === 'percent' ? '%' : ' ' + settings.currency}</p>
-                         {p.expiresAt && <p className="text-[8px] text-slate-600 font-black uppercase mt-1">До: {new Date(p.expiresAt).toLocaleDateString()}</p>}
+                         <p className="text-[10px] text-slate-900 font-bold uppercase">Скидка {p.discountValue}{p.type === 'percent' ? '%' : ' ' + settings.currency}</p>
+                         {p.expiresAt && <p className="text-[8px] text-slate-900 font-black uppercase mt-1">До: {new Date(p.expiresAt).toLocaleDateString()}</p>}
                       </div>
                       <div className="text-right space-y-2">
                          <p className="text-[10px] text-emerald-400 font-black uppercase">Исп: {p.usedCount}</p>
@@ -647,7 +647,7 @@ const handleDeleteProduct = (productId: string) => {
                       </div>
                    </div>
                 ))}
-                {promos.length === 0 && <p className="text-center py-10 text-slate-500 text-xs italic">Список купонов пуст</p>}
+                {promos.length === 0 && <p className="text-center py-10 text-slate-900 text-xs italic">Список купонов пуст</p>}
              </div>
           </div>
        </div>
@@ -669,7 +669,7 @@ const handleDeleteProduct = (productId: string) => {
        </div>
        <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
-             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">
+             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Товар</th><th className="px-4 py-6">SKU</th><th className="px-4 py-6">На складе</th><th className="px-4 py-6">Резерв</th><th className="px-8 py-6 text-right">Статус</th></tr>
              </thead>
              <tbody className="divide-y divide-white/5">
@@ -679,9 +679,9 @@ const handleDeleteProduct = (productId: string) => {
                         <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
                         <span className="text-sm font-black text-white">{p.name}</span>
                      </td>
-                     <td className="px-4 py-5 text-xs text-slate-400 font-mono">{p.sku}</td>
+                     <td className="px-4 py-5 text-xs text-slate-900 font-mono">{p.sku}</td>
                      <td className="px-4 py-5"><span className={`font-black text-sm ${p.stock < 5 ? 'text-rose-400' : 'text-emerald-400'}`}>{p.stock} {p.unit}</span></td>
-                     <td className="px-4 py-5 text-xs text-slate-500 font-bold">0 {p.unit}</td>
+                     <td className="px-4 py-5 text-xs text-slate-900 font-bold">0 {p.unit}</td>
                      <td className="px-8 py-5 text-right">
                         <span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${p.stock < 5 ? 'bg-rose-500/10 text-rose-500' : 'bg-emerald-500/10 text-emerald-500'}`}>
                            {p.stock < 5 ? 'Мало' : 'Ок'}
@@ -701,23 +701,23 @@ const renderAnalytics = () => (
     </h2>
 
     <div className="bg-[#1e2b40] p-10 rounded-[2.5rem] border border-white/5 shadow-xl">
-      <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-6">
+      <p className="text-slate-900 text-xs font-black uppercase tracking-widest mb-6">
         Общая статистика
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
-          <p className="text-[10px] text-slate-500 font-black uppercase">Товаров</p>
+          <p className="text-[10px] text-slate-900 font-black uppercase">Товаров</p>
           <p className="text-3xl font-black text-white">{products.length}</p>
         </div>
 
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
-          <p className="text-[10px] text-slate-500 font-black uppercase">Заказов</p>
+          <p className="text-[10px] text-slate-900 font-black uppercase">Заказов</p>
           <p className="text-3xl font-black text-white">{orders.length}</p>
         </div>
 
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
-          <p className="text-[10px] text-slate-500 font-black uppercase">Выручка</p>
+          <p className="text-[10px] text-slate-900 font-black uppercase">Выручка</p>
           <p className="text-3xl font-black text-white">
             {orders.reduce((s, o) => s + o.total, 0)} {settings.currency}
           </p>
@@ -747,13 +747,13 @@ const renderSettings = () => (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* КАРТОЧКА 1 — Основные данные */}
       <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
-        <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">
+        <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em]">
           Основные данные
         </h4>
 
         <div className="space-y-6">
           <div className="space-y-2">
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+            <label className="text-[10px] font-black text-slate-900 uppercase ml-4 tracking-widest">
               Название магазина
             </label>
             <input
@@ -773,13 +773,13 @@ const renderSettings = () => (
 
       {/* КАРТОЧКА 2 — ПОДВАЛ САЙТА (ТВОЙ КОД) */}
       <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
-        <h4 className="text-xs font-black text-slate-400 uppercase tracking-[0.3em]">
+        <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em]">
           Подвал сайта
         </h4>
 
         <div className="space-y-6">
           <div>
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+            <label className="text-[10px] font-black text-slate-900 uppercase ml-4 tracking-widest">
               Заголовок рассылки
             </label>
             <input
@@ -799,7 +799,7 @@ const renderSettings = () => (
           </div>
 
           <div>
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+            <label className="text-[10px] font-black text-slate-900 uppercase ml-4 tracking-widest">
               Подзаголовок рассылки
             </label>
             <input
@@ -819,7 +819,7 @@ const renderSettings = () => (
           </div>
 
           <div>
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+            <label className="text-[10px] font-black text-slate-900 uppercase ml-4 tracking-widest">
               Телефон поддержки
             </label>
             <input
@@ -839,7 +839,7 @@ const renderSettings = () => (
           </div>
 
           <div>
-            <label className="text-[10px] font-black text-slate-500 uppercase ml-4 tracking-widest">
+            <label className="text-[10px] font-black text-slate-900 uppercase ml-4 tracking-widest">
               Копирайт
             </label>
             <input
@@ -876,7 +876,7 @@ const renderSettings = () => (
        </div>
        <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
-             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-500 tracking-[0.2em]">
+             <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Товар</th><th className="px-4 py-6">SKU</th><th className="px-4 py-6">Цена</th><th className="px-4 py-6">Склад</th><th className="px-8 py-6 text-right">Действия</th></tr>
              </thead>
              <tbody className="divide-y divide-white/5">
@@ -886,7 +886,7 @@ const renderSettings = () => (
       <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
       <span className="text-sm font-black text-white">{p.name}</span>
     </td>
-    <td className="px-4 py-5 text-xs text-slate-400 font-mono uppercase">{p.sku}</td>
+    <td className="px-4 py-5 text-xs text-slate-900 font-mono uppercase">{p.sku}</td>
     <td className="px-4 py-5 text-sm font-black text-indigo-400">${p.price}</td>
     <td className="px-4 py-5">
       <span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${p.stock < 5 ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
@@ -896,7 +896,7 @@ const renderSettings = () => (
     <td className="px-8 py-5 text-right flex justify-end gap-2">
       <button
         onClick={() => { setEditingProduct(p); setIsProductModalOpen(true); }}
-        className="p-2 text-slate-500 hover:text-[#3BB19B] transition-colors"
+        className="p-2 text-slate-900 hover:text-[#3BB19B] transition-colors"
         title="Редактировать"
       >
         ✏️
@@ -925,7 +925,7 @@ const renderSettings = () => (
   );
 
   return (
-    <div className="fixed inset-0 bg-[#0F172A] flex overflow-hidden no-print z-[1000] text-slate-200">
+    <div className="fixed inset-0 bg-[#0F172A] flex overflow-hidden no-print z-[1000] text-slate-900">
       
       {/* SIDEBAR */}
       <aside className="w-64 bg-[#0B1120] border-r border-white/5 flex flex-col shrink-0">
@@ -944,7 +944,7 @@ const renderSettings = () => (
         </div>
 
         <nav className="flex-grow px-4 space-y-1.5 overflow-y-auto hide-scrollbar">
-           <p className="text-[10px] font-black text-slate-600 uppercase tracking-[0.3em] mb-4 px-4">Меню</p>
+           <p className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] mb-4 px-4">Меню</p>
            {menuItems.map(item => (
              <button
                key={item.id}
@@ -952,24 +952,24 @@ const renderSettings = () => (
                className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-2xl text-[13px] font-black uppercase tracking-widest transition-all ${
                  activeTab === item.id 
                    ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-600/20' 
-                   : 'text-slate-500 hover:bg-white/5 hover:text-white'
+                   : 'text-slate-900 hover:bg-white/5 hover:text-white'
                }`}
              >
-               <span className={`${activeTab === item.id ? 'text-white' : 'text-slate-500'}`}>{item.icon}</span>
+               <span className={`${activeTab === item.id ? 'text-white' : 'text-slate-900'}`}>{item.icon}</span>
                {item.label}
              </button>
            ))}
         </nav>
 
         <div className="p-6 border-t border-white/5 bg-black/20 space-y-4">
-           <button onClick={() => setShowChat(true)} className="w-full flex items-center gap-3 text-slate-500 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
-              <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center group-hover:bg-indigo-600/20 transition-all text-slate-400 group-hover:text-indigo-400">
+           <button onClick={() => setShowChat(true)} className="w-full flex items-center gap-3 text-slate-900 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
+              <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center group-hover:bg-indigo-600/20 transition-all text-slate-900 group-hover:text-indigo-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
               </div>
               Поддержка
            </button>
-           <button onClick={() => window.open('https://docs.google.com/document/d/1v9Xv1oX1w1v1v1v1v1v1v1v1v1v1v1v/edit')} className="w-full flex items-center gap-3 text-slate-500 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
-              <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center group-hover:bg-emerald-600/20 transition-all text-slate-400 group-hover:text-emerald-400">
+           <button onClick={() => window.open('https://docs.google.com/document/d/1v9Xv1oX1w1v1v1v1v1v1v1v1v1v1v1v/edit')} className="w-full flex items-center gap-3 text-slate-900 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
+              <div className="w-8 h-8 rounded-xl bg-slate-800 flex items-center justify-center group-hover:bg-emerald-600/20 transition-all text-slate-900 group-hover:text-emerald-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
               </div>
               Документация
@@ -988,7 +988,7 @@ const renderSettings = () => (
                 type="text" placeholder="Быстрый поиск заказов, товаров, клиентов..." 
                 className="w-full pl-14 pr-12 py-3 bg-white/5 border border-white/5 rounded-full text-xs font-bold text-white outline-none focus:bg-white/10 transition-all"
               />
-              <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-500">
+              <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-900">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
               </div>
            </div>
@@ -996,21 +996,21 @@ const renderSettings = () => (
            <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                  <div className="relative">
-                    <button onClick={() => setShowNotifications(!showNotifications)} className="p-2 text-slate-500 hover:text-white transition-colors relative">
+                    <button onClick={() => setShowNotifications(!showNotifications)} className="p-2 text-slate-900 hover:text-white transition-colors relative">
                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
                        <span className="absolute top-1 right-1 w-4 h-4 bg-rose-500 text-white text-[8px] font-black rounded-full flex items-center justify-center border-2 border-[#0B1120]">3</span>
                     </button>
                     {showNotifications && (
                        <div className="absolute top-full right-0 mt-4 w-80 bg-[#1e2b40] rounded-3xl border border-white/5 shadow-2xl p-6 z-[200] animate-zoom-in">
-                          <p className="text-[10px] font-black text-slate-500 uppercase tracking-widest mb-4">Уведомления</p>
+                          <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-4">Уведомления</p>
                           <div className="space-y-4">
-                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-rose-500"><p className="text-xs text-white font-bold">Низкий запас товара</p><p className="text-[9px] text-slate-400 mt-1">BALLU BSPR09HN1 - осталось 2 шт.</p></div>
-                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-emerald-500"><p className="text-xs text-white font-bold">Новый заказ #ЗАКАЗ-431</p><p className="text-[9px] text-slate-400 mt-1">Оплачено: 45,000 AMD</p></div>
+                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-rose-500"><p className="text-xs text-white font-bold">Низкий запас товара</p><p className="text-[9px] text-slate-900 mt-1">BALLU BSPR09HN1 - осталось 2 шт.</p></div>
+                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-emerald-500"><p className="text-xs text-white font-bold">Новый заказ #ЗАКАЗ-431</p><p className="text-[9px] text-slate-900 mt-1">Оплачено: 45,000 AMD</p></div>
                           </div>
                        </div>
                     )}
                  </div>
-                 <button onClick={() => setShowChat(!showChat)} className={`p-2 transition-colors relative ${showChat ? 'text-[#3BB19B]' : 'text-slate-500 hover:text-white'}`}>
+                 <button onClick={() => setShowChat(!showChat)} className={`p-2 transition-colors relative ${showChat ? 'text-[#3BB19B]' : 'text-slate-900 hover:text-white'}`}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                     <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#0B1120] animate-pulse"></span>
                  </button>
@@ -1052,7 +1052,7 @@ const renderSettings = () => (
                       <p className="text-[9px] font-bold text-emerald-400 uppercase">Онлайн</p>
                    </div>
                 </div>
-                <button onClick={() => setShowChat(false)} className="text-slate-500 hover:text-white transition-colors">
+                <button onClick={() => setShowChat(false)} className="text-slate-900 hover:text-white transition-colors">
                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
              </div>
@@ -1060,8 +1060,8 @@ const renderSettings = () => (
              <div className="flex-grow overflow-y-auto p-6 space-y-4 hide-scrollbar">
                 {chatMessages.map(msg => (
                   <div key={msg.id} className={`flex flex-col ${msg.isMe ? 'items-end' : 'items-start'}`}>
-                     {!msg.isMe && <span className="text-[8px] font-black text-slate-500 uppercase mb-1 ml-1">{msg.sender}</span>}
-                     <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold ${msg.isMe ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-slate-900 text-slate-200 border border-white/5 rounded-tl-none'}`}>
+                     {!msg.isMe && <span className="text-[8px] font-black text-slate-900 uppercase mb-1 ml-1">{msg.sender}</span>}
+                     <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold ${msg.isMe ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-slate-900 text-slate-900 border border-white/5 rounded-tl-none'}`}>
                         {msg.text}
                         <div className={`text-[8px] mt-1.5 opacity-50 ${msg.isMe ? 'text-right' : 'text-left'}`}>{msg.time}</div>
                      </div>
@@ -1078,7 +1078,7 @@ const renderSettings = () => (
                       onChange={(e) => setChatInput(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                       placeholder="Написать сообщение..."
-                      className="w-full py-3 bg-transparent border-none outline-none text-xs font-bold text-white placeholder:text-slate-600"
+                      className="w-full py-3 bg-transparent border-none outline-none text-xs font-bold text-white placeholder:text-slate-900"
                    />
                    <button 
                       onClick={handleSendMessage}
