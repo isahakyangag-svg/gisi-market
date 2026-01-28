@@ -48,9 +48,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
   return (
     <div 
-      className={`group relative cursor-pointer p-5 bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border border-white/60 dark:border-white/10 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.1)] rounded-[3.5rem] hover:translate-y-[-8px] hover:shadow-[0_40px_80px_-20px_rgba(0,0,0,0.15)] transition-all duration-500 flex flex-col h-full ${containerClassName || ''}`}
-      onClick={() => onClick(product)}
-    >
+  className={`group relative cursor-pointer p-5 bg-white/40 ... flex flex-col 
+              w-[290px] h-[431px]   // ← фиксируем размер
+              ${containerClassName || ''}`}
+  onClick={() => onClick(product)}
+>
+
       {/* Product Image Area */}
       <div className="relative aspect-[4/4.8] mb-6 flex flex-col items-center justify-center p-8 bg-white/30 dark:bg-white/5 rounded-[3rem] border border-white/40 dark:border-white/5 overflow-hidden">
         <div className="w-full h-full flex items-center justify-center relative transition-transform duration-700 cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-110">
