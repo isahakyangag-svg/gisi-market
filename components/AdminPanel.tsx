@@ -830,10 +830,17 @@ const handleDeleteProduct = (productId: string) => {
       {/* SIDEBAR */}
       <aside className="w-64 bg-[#0B1120] border-r border-white/5 flex flex-col shrink-0">
         <div className="p-8 mb-4">
-          <div className="flex flex-col leading-none select-none">
-            <span className="text-4xl font-black italic text-[#3BB19B] tracking-tighter uppercase drop-shadow-xl">GISI</span>
-            <span className="text-xl font-black text-white/90 tracking-[0.3em] -mt-1 uppercase opacity-80">ADMIN</span>
-          </div>
+<button
+  onClick={onExit}
+  className="flex flex-col leading-none select-none cursor-pointer focus:outline-none"
+>
+  <span className="text-4xl font-black italic text-[#3BB19B] tracking-tighter uppercase drop-shadow-xl">
+    GISI
+  </span>
+  <span className="text-xl font-black text-white/90 tracking-[0.3em] -mt-1 uppercase opacity-80">
+    ADMIN
+  </span>
+</button>
         </div>
 
         <nav className="flex-grow px-4 space-y-1.5 overflow-y-auto hide-scrollbar">
