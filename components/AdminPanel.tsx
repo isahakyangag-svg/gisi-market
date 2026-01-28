@@ -663,6 +663,39 @@ const handleDeleteProduct = (productId: string) => {
   );
 
   const renderInventory = () => (
+const renderAnalytics = () => (
+  <div className="p-8 space-y-10 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
+    <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">
+      Аналитика
+    </h2>
+
+    <div className="bg-[#1e2b40] p-10 rounded-[2.5rem] border border-white/5 shadow-xl">
+      <p className="text-slate-400 text-xs font-black uppercase tracking-widest mb-6">
+        Общая статистика
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
+          <p className="text-[10px] text-slate-500 font-black uppercase">Товаров</p>
+          <p className="text-3xl font-black text-white">{products.length}</p>
+        </div>
+
+        <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
+          <p className="text-[10px] text-slate-500 font-black uppercase">Заказов</p>
+          <p className="text-3xl font-black text-white">{orders.length}</p>
+        </div>
+
+        <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
+          <p className="text-[10px] text-slate-500 font-black uppercase">Выручка</p>
+          <p className="text-3xl font-black text-white">
+            {orders.reduce((s, o) => s + o.total, 0)} {settings.currency}
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Складской учёт</h2>
