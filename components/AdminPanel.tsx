@@ -101,7 +101,18 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
     if (s.includes('отменен') || s === 'hidden' || s === 'inactive' || s === 'expired') return 'bg-rose-500/10 text-rose-500';
     return 'bg-indigo-500/10 text-indigo-500';
   };
+// Удаление товара
+const handleDeleteProduct = (productId: string) => {
+  const product = products.find(p => p.id === productId);
+  const name = product?.name || 'товар';
 
+  if (!confirm(`Удалить "${name}"?`)) return;
+
+  const updatedProducts = products.filter(p => p.id !== productId);
+  onUpdateProducts(updatedProducts);
+
+  addAuditLog('Удаление товара', name, 'product');
+};
   const handlePrintInvoice = (order: Order) => {
     if (!order) return;
     const printWindow = window.open('', '_blank');
@@ -781,11 +792,24 @@ export const AdminPanel: React.FC<AdminPanelProps> = ({
                         <span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${p.stock < 5 ? 'bg-rose-500/20 text-rose-400' : 'bg-emerald-500/20 text-emerald-400'}`}>
                            {p.stock} шт
                         </span>
-                     </td>
-                     <td className="px-8 py-5 text-right">
-                        <button onClick={() => { setEditingProduct(p); setIsProductModalOpen(true); }} className="p-2 text-slate-500 hover:text-[#3BB19B] transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" strokeWidth="2.5"/></svg></button>
-                     </td>
-                  </tr>
+                     <td className="px-8 py-5 text-right flex justify-end gap-2">
+  <button
+    onClick={() => { setEditingProduct(p); setIsProductModalOpen(true); }}
+    className="p-2 text-slate-500 hover:text-[#3BB19B] transition-colors"
+    title="Редактировать"
+  >
+    ✏️
+  </button>
+
+  <button
+    onClick={() => handleDeleteProduct(p.id)}
+    className="p-2 text-rose-400 hover:text-rose-500 transition-colors"
+    title="Удалить товар"
+  >
+    🗑️
+  </button>
+</td>
+
                 ))}
              </tbody>
           </table>
