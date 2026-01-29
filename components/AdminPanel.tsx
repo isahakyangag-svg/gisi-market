@@ -927,7 +927,6 @@ const renderSettings = () => (
   return (
     return (
   <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-black">
-           //                ^^^^^               ^^^^^^^^^^^^^^^
       
       {/* SIDEBAR */}
       <aside className="w-64 bg-white border-r border-slate-900 flex flex-col shrink-0">
