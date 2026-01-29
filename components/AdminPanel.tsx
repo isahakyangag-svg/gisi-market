@@ -201,7 +201,7 @@ const handleDeleteProduct = (productId: string) => {
         <div className="bg-white p-6 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group">
           <p className="text-slate-900 text-xs font-black uppercase tracking-widest mb-2">Общий объем продаж</p>
           <div className="flex items-baseline gap-2">
-            <h3 className="text-3xl font-black text-white italic tracking-tighter">{totalRevenue.toLocaleString()} {settings.currency}</h3>
+            <h3 className="text-3xl font-black text-black italic tracking-tighter">{totalRevenue.toLocaleString()} {settings.currency}</h3>
             <span className="text-emerald-400 text-[10px] font-black uppercase">+12% Сегодня</span>
           </div>
           <div className="mt-4 flex justify-between text-[10px] font-bold text-slate-900 uppercase tracking-widest">
@@ -220,12 +220,12 @@ const handleDeleteProduct = (productId: string) => {
           </div>
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-               <span className="text-sm text-white font-bold">В наличии: <span className="text-[#3BB19B]">1,230</span></span>
+               <span className="text-sm text-black font-bold">В наличии: <span className="text-[#3BB19B]">1,230</span></span>
                <span className="text-[10px] bg-rose-500/10 text-rose-500 px-2 py-1 rounded-lg font-black">Мало: {lowStockCount}</span>
             </div>
             <div className="flex gap-2">
-               <button className="flex-grow py-2.5 bg-slate-800/50 hover:bg-slate-800 text-white text-[10px] font-black uppercase rounded-xl border border-white/5 transition-all">Импорт CSV</button>
-               <button className="flex-grow py-2.5 bg-slate-800/50 hover:bg-slate-800 text-white text-[10px] font-black uppercase rounded-xl border border-white/5 transition-all">Экспорт</button>
+               <button className="flex-grow py-2.5 bg-slate-800/50 hover:bg-slate-800 text-black text-[10px] font-black uppercase rounded-xl border border-white/5 transition-all">Импорт CSV</button>
+               <button className="flex-grow py-2.5 bg-slate-800/50 hover:bg-slate-800 text-black text-[10px] font-black uppercase rounded-xl border border-white/5 transition-all">Экспорт</button>
             </div>
           </div>
         </div>
@@ -241,21 +241,21 @@ const handleDeleteProduct = (productId: string) => {
                  <div className="flex items-center gap-3">
                     <div className="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-xl text-slate-900 font-bold">👤</div>
                     <div>
-                       <p className="text-sm font-black text-white">{orders[0].customerName}</p>
+                       <p className="text-sm font-black text-black">{orders[0].customerName}</p>
                        <p className="text-[10px] text-slate-900 font-bold">{orders[0].customerEmail}</p>
                     </div>
                  </div>
                  <p className="text-xs text-slate-900 font-medium">Заказ {orders[0].id} <span className="float-right font-black">{orders[0].total} {settings.currency}</span></p>
                  <button 
                    onClick={() => handlePrintInvoice(orders[0])}
-                   className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-indigo-600/20 transition-all active:scale-95"
+                   className="w-full py-4 bg-indigo-600 hover:bg-indigo-700 text-black rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-indigo-600/20 transition-all active:scale-95"
                  >
                    Распечатать счет
                  </button>
                </>
              ) : (
                <div className="flex flex-col items-center justify-center h-24 opacity-30">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-white">Нет активных заказов</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-black">Нет активных заказов</p>
                </div>
              )}
           </div>
@@ -265,10 +265,10 @@ const handleDeleteProduct = (productId: string) => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <div className="lg:col-span-8 bg-white p-8 rounded-[2.5rem] border border-white/5 shadow-xl min-h-[400px]">
            <div className="flex justify-between items-center mb-10">
-              <h4 className="text-xl font-black text-white uppercase italic tracking-tighter">Обзор продаж</h4>
+              <h4 className="text-xl font-black text-black uppercase italic tracking-tighter">Обзор продаж</h4>
               <div className="flex gap-2 bg-slate-900/50 p-1 rounded-xl">
-                 <button className="px-4 py-1.5 text-slate-900 text-[9px] font-black rounded-lg hover:text-white transition-colors">День</button>
-                 <button className="px-4 py-1.5 bg-indigo-600 text-white text-[9px] font-black rounded-lg shadow-lg">Неделя</button>
+                 <button className="px-4 py-1.5 text-slate-900 text-[9px] font-black rounded-lg hover:text-black transition-colors">День</button>
+                 <button className="px-4 py-1.5 bg-indigo-600 text-black text-[9px] font-black rounded-lg shadow-lg">Неделя</button>
               </div>
            </div>
            
@@ -298,7 +298,7 @@ const handleDeleteProduct = (productId: string) => {
                         <img src={p.image} className="max-w-full max-h-full object-contain mix-blend-screen" alt={p.name} />
                       </div>
                       <div className="flex-grow overflow-hidden">
-                         <p className="text-xs font-black text-white truncate uppercase tracking-tighter">{p.name}</p>
+                         <p className="text-xs font-black text-black truncate uppercase tracking-tighter">{p.name}</p>
                          <p className="text-[9px] text-slate-900 font-bold uppercase tracking-widest">{p.brand}</p>
                       </div>
                       <span className="text-xs font-black text-indigo-400 italic">${p.price}</span>
@@ -313,11 +313,11 @@ const handleDeleteProduct = (productId: string) => {
               </div>
               <div className="space-y-4">
                  <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 group hover:border-[#3BB19B]/30 cursor-pointer transition-all">
-                    <span className="text-[10px] font-black text-white uppercase tracking-widest italic">Flash Sale 20% OFF</span>
+                    <span className="text-[10px] font-black text-black uppercase tracking-widest italic">Flash Sale 20% OFF</span>
                     <span className="text-[9px] text-emerald-400 font-black uppercase tracking-widest">Активен</span>
                  </div>
                  <div className="flex items-center justify-between p-4 bg-slate-900/50 rounded-2xl border border-white/5 group hover:border-indigo-400/30 cursor-pointer transition-all">
-                    <span className="text-[10px] font-black text-white uppercase tracking-widest italic">Spring Promo BOGO</span>
+                    <span className="text-[10px] font-black text-black uppercase tracking-widest italic">Spring Promo BOGO</span>
                     <span className="text-[9px] text-slate-900 font-black uppercase tracking-widest">Завтра</span>
                  </div>
               </div>
@@ -370,7 +370,7 @@ const handleDeleteProduct = (productId: string) => {
   const renderBanners = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Баннеры на главной</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Баннеры на главной</h2>
           <button 
             onClick={() => { 
               setEditingBanner({ 
@@ -383,7 +383,7 @@ const handleDeleteProduct = (productId: string) => {
               }); 
               setIsBannerModalOpen(true); 
             }}
-            className="px-6 py-3 bg-[#3BB19B] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all"
+            className="px-6 py-3 bg-[#3BB19B] text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all"
           >
             Добавить баннер
           </button>
@@ -399,12 +399,12 @@ const handleDeleteProduct = (productId: string) => {
                     <img src={banner.imageUrl} className="w-full h-full object-cover opacity-60" />
                   )}
                   <div className="absolute inset-0 p-6 flex flex-col justify-end bg-gradient-to-t from-black/80 to-transparent">
-                     <p className="text-xs font-black text-white italic tracking-tighter truncate">{banner.title}</p>
+                     <p className="text-xs font-black text-black italic tracking-tighter truncate">{banner.title}</p>
                      <p className="text-[9px] text-slate-900 font-bold uppercase tracking-widest mt-1">Порядок: {banner.order}</p>
                   </div>
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                     <button onClick={() => { setEditingBanner(banner); setIsBannerModalOpen(true); }} className="w-8 h-8 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-[#3BB19B] transition-all">✏️</button>
-                     <button onClick={() => { if(confirm('Удалить баннер?')) onUpdateBanners(banners.filter(b => b.id !== banner.id)); }} className="w-8 h-8 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-white hover:bg-rose-500 transition-all">🗑️</button>
+                     <button onClick={() => { setEditingBanner(banner); setIsBannerModalOpen(true); }} className="w-8 h-8 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-black hover:bg-[#3BB19B] transition-all">✏️</button>
+                     <button onClick={() => { if(confirm('Удалить баннер?')) onUpdateBanners(banners.filter(b => b.id !== banner.id)); }} className="w-8 h-8 bg-white/10 backdrop-blur-md rounded-xl flex items-center justify-center text-black hover:bg-rose-500 transition-all">🗑️</button>
                   </div>
                   <div className="absolute top-4 left-4">
                      <span className={`px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest ${getStatusBadgeClass(banner.status)}`}>{banner.status}</span>
@@ -426,10 +426,10 @@ const handleDeleteProduct = (productId: string) => {
             <div className="bg-white w-full max-w-5xl rounded-[3rem] shadow-2xl border border-white/5 overflow-hidden flex flex-col max-h-[90vh] animate-zoom-in">
                <div className="px-10 py-8 border-b border-white/5 flex items-center justify-between shrink-0">
                   <div>
-                    <h3 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none">Настройка баннера</h3>
+                    <h3 className="text-xl font-black text-black italic tracking-tighter uppercase leading-none">Настройка баннера</h3>
                     <p className="text-[9px] font-black text-slate-900 uppercase tracking-[0.2em] mt-2">Визуальный редактор NovaScale™</p>
                   </div>
-                  <button onClick={() => setIsBannerModalOpen(false)} className="text-slate-900 hover:text-white transition-colors">✕</button>
+                  <button onClick={() => setIsBannerModalOpen(false)} className="text-slate-900 hover:text-black transition-colors">✕</button>
                </div>
 
                <div className="flex-grow overflow-y-auto p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 hide-scrollbar">
@@ -437,20 +437,20 @@ const handleDeleteProduct = (productId: string) => {
                      <div className="space-y-4">
                         <div className="space-y-1">
                            <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Заголовок баннера</label>
-                           <input type="text" value={editingBanner.title || ''} onChange={e => setEditingBanner({...editingBanner, title: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]" />
+                           <input type="text" value={editingBanner.title || ''} onChange={e => setEditingBanner({...editingBanner, title: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B]" />
                         </div>
                         <div className="space-y-1">
                            <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Подзаголовок</label>
-                           <textarea value={editingBanner.subtitle || ''} onChange={e => setEditingBanner({...editingBanner, subtitle: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B] h-24 resize-none" />
+                           <textarea value={editingBanner.subtitle || ''} onChange={e => setEditingBanner({...editingBanner, subtitle: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B] h-24 resize-none" />
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                            <div className="space-y-1">
                               <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Текст кнопки</label>
-                              <input type="text" value={editingBanner.buttonText || ''} onChange={e => setEditingBanner({...editingBanner, buttonText: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none" />
+                              <input type="text" value={editingBanner.buttonText || ''} onChange={e => setEditingBanner({...editingBanner, buttonText: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none" />
                            </div>
                            <div className="space-y-1">
                               <label className="text-[9px] font-black text-slate-900 uppercase ml-2 tracking-widest">Ссылка / ID товара</label>
-                              <input type="text" value={editingBanner.link || ''} onChange={e => setEditingBanner({...editingBanner, link: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none" />
+                              <input type="text" value={editingBanner.link || ''} onChange={e => setEditingBanner({...editingBanner, link: e.target.value})} className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none" />
                            </div>
                         </div>
                      </div>
@@ -463,7 +463,7 @@ const handleDeleteProduct = (productId: string) => {
                               <select 
                                 value={editingBanner.animationType} 
                                 onChange={e => setEditingBanner({...editingBanner, animationType: e.target.value as any})}
-                                className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold appearance-none"
+                                className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold appearance-none"
                               >
                                  <option value="fade">Плавное затухание (Fade)</option>
                                  <option value="slide">Сдвиг (Slide)</option>
@@ -474,7 +474,7 @@ const handleDeleteProduct = (productId: string) => {
                               <select 
                                 value={editingBanner.contentAlignment} 
                                 onChange={e => setEditingBanner({...editingBanner, contentAlignment: e.target.value as any})}
-                                className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-white font-bold appearance-none"
+                                className="w-full p-4 bg-black/20 border border-white/5 rounded-2xl text-black font-bold appearance-none"
                               >
                                  <option value="left">Слева</option>
                                  <option value="center">По центру</option>
@@ -510,13 +510,13 @@ const handleDeleteProduct = (productId: string) => {
                                <img src={editingBanner.imageUrl} className="absolute inset-0 w-full h-full object-cover" />
                              )}
                              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Сменить медиафайл</span>
+                                <span className="text-[10px] font-black text-black uppercase tracking-widest">Сменить медиафайл</span>
                              </div>
                            </>
                         ) : (
                            <div className="text-center space-y-3 opacity-30 group-hover:opacity-100 transition-opacity">
                               <span className="text-4xl text-slate-900">📁</span>
-                              <p className="text-[10px] font-black text-white uppercase tracking-widest">Кликните для загрузки с компьютера</p>
+                              <p className="text-[10px] font-black text-black uppercase tracking-widest">Кликните для загрузки с компьютера</p>
                               <p className="text-[8px] text-slate-900 font-bold uppercase italic">Поддержка JPG, PNG, GIF, MP4</p>
                            </div>
                         )}
@@ -529,10 +529,10 @@ const handleDeleteProduct = (productId: string) => {
                            <span className="text-[9px] font-black text-slate-900 uppercase tracking-widest">Превью контента</span>
                         </div>
                         <div className={`p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 ${editingBanner.contentAlignment === 'center' ? 'text-center' : editingBanner.contentAlignment === 'right' ? 'text-right' : 'text-left'}`}>
-                           <h4 className="text-2xl font-black text-white italic tracking-tighter uppercase leading-none mb-3">{editingBanner.title || 'Заголовок'}</h4>
+                           <h4 className="text-2xl font-black text-black italic tracking-tighter uppercase leading-none mb-3">{editingBanner.title || 'Заголовок'}</h4>
                            <p className="text-xs text-slate-900 font-bold max-w-xs inline-block">{editingBanner.subtitle || 'Ваше описание здесь'}</p>
                            <div className="mt-6">
-                              <button className="px-6 py-2.5 bg-[#3BB19B] text-white rounded-xl text-[9px] font-black uppercase tracking-widest">{editingBanner.buttonText || 'Перейти'}</button>
+                              <button className="px-6 py-2.5 bg-[#3BB19B] text-black rounded-xl text-[9px] font-black uppercase tracking-widest">{editingBanner.buttonText || 'Перейти'}</button>
                            </div>
                         </div>
                      </div>
@@ -540,8 +540,8 @@ const handleDeleteProduct = (productId: string) => {
                </div>
 
                <div className="px-10 py-8 border-t border-white/5 bg-black/10 flex justify-end gap-4 shrink-0">
-                  <button onClick={() => setIsBannerModalOpen(false)} className="px-10 py-4 text-slate-900 hover:text-white text-[10px] font-black uppercase tracking-widest transition-colors">Отмена</button>
-                  <button onClick={handleSaveBanner} className="px-12 py-4 bg-[#3BB19B] text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all">Сохранить баннер</button>
+                  <button onClick={() => setIsBannerModalOpen(false)} className="px-10 py-4 text-slate-900 hover:text-black text-[10px] font-black uppercase tracking-widest transition-colors">Отмена</button>
+                  <button onClick={handleSaveBanner} className="px-12 py-4 bg-[#3BB19B] text-black rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all">Сохранить баннер</button>
                </div>
             </div>
          </div>
@@ -552,13 +552,13 @@ const handleDeleteProduct = (productId: string) => {
   const renderOrders = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Заказы</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Заказы</h2>
           <div className="flex gap-4">
              <input 
                type="text" placeholder="Поиск по ID или имени..." 
-               className="bg-white border border-white/5 rounded-xl px-4 py-2 text-xs text-white outline-none focus:border-indigo-500" 
+               className="bg-white border border-white/5 rounded-xl px-4 py-2 text-xs text-black outline-none focus:border-indigo-500" 
              />
-             <button className="px-6 py-2 bg-indigo-600 text-white rounded-xl text-[10px] font-black uppercase tracking-widest">Экспорт CSV</button>
+             <button className="px-6 py-2 bg-indigo-600 text-black rounded-xl text-[10px] font-black uppercase tracking-widest">Экспорт CSV</button>
           </div>
        </div>
        <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
@@ -569,13 +569,13 @@ const handleDeleteProduct = (productId: string) => {
              <tbody className="divide-y divide-white/5">
                 {orders.map(o => (
                   <tr key={o.id} className="hover:bg-white/5 transition-colors">
-                     <td className="px-8 py-5"><span className="text-xs font-black text-white">{o.id}</span><p className="text-[10px] text-slate-900">{o.date}</p></td>
-                     <td className="px-4 py-5"><p className="text-sm font-bold text-white">{o.customerName}</p><p className="text-[10px] text-slate-900">{o.customerEmail}</p></td>
+                     <td className="px-8 py-5"><span className="text-xs font-black text-black">{o.id}</span><p className="text-[10px] text-slate-900">{o.date}</p></td>
+                     <td className="px-4 py-5"><p className="text-sm font-bold text-black">{o.customerName}</p><p className="text-[10px] text-slate-900">{o.customerEmail}</p></td>
                      <td className="px-4 py-5 font-black text-indigo-400">{o.total.toLocaleString()} {settings.currency}</td>
                      <td className="px-4 py-5"><span className={`px-2 py-1 rounded-lg text-[10px] font-black uppercase ${getStatusBadgeClass(o.status)}`}>{o.status}</span></td>
                      <td className="px-8 py-5 text-right flex justify-end gap-2">
-                        <button onClick={() => handlePrintInvoice(o)} className="p-2 text-slate-900 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" strokeWidth="2"/></svg></button>
-                        <button className="p-2 text-slate-900 hover:text-white transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeWidth="2"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2"/></svg></button>
+                        <button onClick={() => handlePrintInvoice(o)} className="p-2 text-slate-900 hover:text-black transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" strokeWidth="2"/></svg></button>
+                        <button className="p-2 text-slate-900 hover:text-black transition-colors"><svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" strokeWidth="2"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" strokeWidth="2"/></svg></button>
                      </td>
                   </tr>
                 ))}
@@ -589,7 +589,7 @@ const handleDeleteProduct = (productId: string) => {
   const renderCustomers = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Клиенты</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Клиенты</h2>
        </div>
        <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
@@ -600,10 +600,10 @@ const handleDeleteProduct = (productId: string) => {
                 {[currentUser, ...customers].filter(Boolean).map((c: any) => (
                   <tr key={c.id} className="hover:bg-white/5 transition-colors">
                      <td className="px-8 py-5 flex items-center gap-4">
-                        <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-white font-black text-[10px]">{c.name[0]}</div>
-                        <span className="text-sm font-black text-white">{c.name}</span>
+                        <div className="w-8 h-8 rounded-full bg-indigo-600 flex items-center justify-center text-black font-black text-[10px]">{c.name[0]}</div>
+                        <span className="text-sm font-black text-black">{c.name}</span>
                      </td>
-                     <td className="px-4 py-5"><p className="text-xs text-white">{c.email}</p><p className="text-[10px] text-slate-900">{c.phone || 'Нет телефона'}</p></td>
+                     <td className="px-4 py-5"><p className="text-xs text-black">{c.email}</p><p className="text-[10px] text-slate-900">{c.phone || 'Нет телефона'}</p></td>
                      <td className="px-4 py-5 text-xs text-slate-900">{new Date(c.joinedDate).toLocaleDateString()}</td>
                      <td className="px-4 py-5"><span className="px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-500 text-[10px] font-black uppercase">Активен</span></td>
                      <td className="px-8 py-5 text-right"><button className="text-indigo-400 font-black text-[10px] uppercase hover:underline">Подробнее</button></td>
@@ -618,13 +618,13 @@ const handleDeleteProduct = (productId: string) => {
   const renderMarketing = () => (
     <div className="p-8 space-y-8 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Маркетинг и Купоны</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Маркетинг и Купоны</h2>
           <button 
             onClick={() => {
                setEditingPromo(null);
                setIsPromoModalOpen(true);
             }}
-            className="px-6 py-3 bg-indigo-600 text-white rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-indigo-600/20"
+            className="px-6 py-3 bg-indigo-600 text-black rounded-2xl text-[10px] font-black uppercase tracking-widest shadow-xl shadow-indigo-600/20"
           >Создать купон</button>
        </div>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -634,7 +634,7 @@ const handleDeleteProduct = (productId: string) => {
                 {promos.map(p => (
                    <div key={p.id} className="flex items-center justify-between p-6 bg-black/20 rounded-2xl border border-white/5 group hover:border-[#3BB19B]/30 transition-all">
                       <div>
-                         <p className="text-sm font-black text-white tracking-widest mb-1">{p.code}</p>
+                         <p className="text-sm font-black text-black tracking-widest mb-1">{p.code}</p>
                          <p className="text-[10px] text-slate-900 font-bold uppercase">Скидка {p.discountValue}{p.type === 'percent' ? '%' : ' ' + settings.currency}</p>
                          {p.expiresAt && <p className="text-[8px] text-slate-900 font-black uppercase mt-1">До: {new Date(p.expiresAt).toLocaleDateString()}</p>}
                       </div>
@@ -665,7 +665,7 @@ const handleDeleteProduct = (productId: string) => {
   const renderInventory = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Складской учёт</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Складской учёт</h2>
        </div>
        <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
@@ -677,7 +677,7 @@ const handleDeleteProduct = (productId: string) => {
                   <tr key={p.id} className="hover:bg-white/5 transition-colors">
                      <td className="px-8 py-5 flex items-center gap-4">
                         <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
-                        <span className="text-sm font-black text-white">{p.name}</span>
+                        <span className="text-sm font-black text-black">{p.name}</span>
                      </td>
                      <td className="px-4 py-5 text-xs text-slate-900 font-mono">{p.sku}</td>
                      <td className="px-4 py-5"><span className={`font-black text-sm ${p.stock < 5 ? 'text-rose-400' : 'text-emerald-400'}`}>{p.stock} {p.unit}</span></td>
@@ -696,7 +696,7 @@ const handleDeleteProduct = (productId: string) => {
   );
 const renderAnalytics = () => (
   <div className="p-8 space-y-10 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
-    <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">
+    <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">
       Аналитика
     </h2>
 
@@ -708,17 +708,17 @@ const renderAnalytics = () => (
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
           <p className="text-[10px] text-slate-900 font-black uppercase">Товаров</p>
-          <p className="text-3xl font-black text-white">{products.length}</p>
+          <p className="text-3xl font-black text-black">{products.length}</p>
         </div>
 
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
           <p className="text-[10px] text-slate-900 font-black uppercase">Заказов</p>
-          <p className="text-3xl font-black text-white">{orders.length}</p>
+          <p className="text-3xl font-black text-black">{orders.length}</p>
         </div>
 
         <div className="bg-black/20 p-6 rounded-2xl border border-white/5">
           <p className="text-[10px] text-slate-900 font-black uppercase">Выручка</p>
-          <p className="text-3xl font-black text-white">
+          <p className="text-3xl font-black text-black">
             {orders.reduce((s, o) => s + o.total, 0)} {settings.currency}
           </p>
         </div>
@@ -730,7 +730,7 @@ const renderAnalytics = () => (
 const renderSettings = () => (
   <div className="p-10 animate-fade-in space-y-10 overflow-y-auto max-h-screen hide-scrollbar">
     <div className="flex items-center justify-between">
-      <h2 className="text-3xl font-black text-white italic tracking-tighter uppercase leading-none">
+      <h2 className="text-3xl font-black text-black italic tracking-tighter uppercase leading-none">
         Настройки системы
       </h2>
       <button
@@ -738,7 +738,7 @@ const renderSettings = () => (
           alert('Настройки успешно сохранены в базе данных');
           addAuditLog('Обновление настроек', 'Обновлены основные настройки системы', 'settings');
         }}
-        className="px-10 py-4 bg-[#3BB19B] text-white rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-teal-500/20"
+        className="px-10 py-4 bg-[#3BB19B] text-black rounded-2xl font-black text-[11px] uppercase tracking-widest shadow-xl shadow-teal-500/20"
       >
         Сохранить всё
       </button>
@@ -765,7 +765,7 @@ const renderSettings = () => (
                   storeName: e.target.value,
                 })
               }
-              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B] transition-all"
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B] transition-all"
             />
           </div>
         </div>
@@ -794,7 +794,7 @@ const renderSettings = () => (
                   },
                 })
               }
-              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B]"
             />
           </div>
 
@@ -814,7 +814,7 @@ const renderSettings = () => (
                   },
                 })
               }
-              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B]"
             />
           </div>
 
@@ -834,7 +834,7 @@ const renderSettings = () => (
                   },
                 })
               }
-              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B]"
             />
           </div>
 
@@ -854,7 +854,7 @@ const renderSettings = () => (
                   },
                 })
               }
-              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-white font-bold outline-none focus:border-[#3BB19B]"
+              className="w-full p-5 bg-black/20 border border-white/5 rounded-2xl text-black font-bold outline-none focus:border-[#3BB19B]"
             />
           </div>
         </div>
@@ -866,10 +866,10 @@ const renderSettings = () => (
   const renderProductsList = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Управление товарами</h2>
+          <h2 className="text-2xl font-black text-black tracking-tighter uppercase italic">Управление товарами</h2>
           <button 
             onClick={() => { setEditingProduct(null); setIsProductModalOpen(true); }}
-            className="px-6 py-3 bg-[#3BB19B] text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all"
+            className="px-6 py-3 bg-[#3BB19B] text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-lg shadow-teal-500/20 hover:scale-105 active:scale-95 transition-all"
           >
             Добавить товар
           </button>
@@ -884,7 +884,7 @@ const renderSettings = () => (
   <tr key={p.id} className="hover:bg-white/5 transition-colors group">
     <td className="px-8 py-5 flex items-center gap-4">
       <img src={p.image} className="w-10 h-10 rounded-xl bg-white/10 object-contain p-1" />
-      <span className="text-sm font-black text-white">{p.name}</span>
+      <span className="text-sm font-black text-black">{p.name}</span>
     </td>
     <td className="px-4 py-5 text-xs text-slate-900 font-mono uppercase">{p.sku}</td>
     <td className="px-4 py-5 text-sm font-black text-indigo-400">${p.price}</td>
@@ -925,7 +925,9 @@ const renderSettings = () => (
   );
 
   return (
-    <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-slate-900">
+    return (
+  <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-black">
+           //                ^^^^^               ^^^^^^^^^^^^^^^
       
       {/* SIDEBAR */}
       <aside className="w-64 bg-white border-r border-slate-900 flex flex-col shrink-0">
@@ -937,7 +939,7 @@ const renderSettings = () => (
   <span className="text-4xl font-black italic text-[#3BB19B] tracking-tighter uppercase drop-shadow-xl">
     GISI
   </span>
-  <span className="text-xl font-black text-white/90 tracking-[0.3em] -mt-1 uppercase opacity-80">
+  <span className="text-xl font-black text-black/90 tracking-[0.3em] -mt-1 uppercase opacity-80">
     ADMIN
   </span>
 </button>
@@ -951,30 +953,30 @@ const renderSettings = () => (
                onClick={() => setActiveTab(item.id)}
                className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-2xl text-[13px] font-black uppercase tracking-widest transition-all ${
                  activeTab === item.id 
-                   ? 'bg-indigo-600 text-white shadow-xl shadow-indigo-600/20' 
-                   : 'text-slate-900 hover:bg-white/5 hover:text-white'
+                   ? 'bg-indigo-600 text-black shadow-xl shadow-indigo-600/20' 
+                   : 'text-slate-900 hover:bg-white/5 hover:text-black'
                }`}
              >
-               <span className={`${activeTab === item.id ? 'text-white' : 'text-slate-900'}`}>{item.icon}</span>
+               <span className={`${activeTab === item.id ? 'text-black' : 'text-slate-900'}`}>{item.icon}</span>
                {item.label}
              </button>
            ))}
         </nav>
 
         <div className="p-6 border-t border-white/5 bg-black/20 space-y-4">
-           <button onClick={() => setShowChat(true)} className="w-full flex items-center gap-3 text-slate-900 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
+           <button onClick={() => setShowChat(true)} className="w-full flex items-center gap-3 text-slate-900 hover:text-black text-[11px] font-black uppercase tracking-widest transition-colors group">
               <div className="w-8 h-8 rounded-xl bg-slate-900 flex items-center justify-center group-hover:bg-indigo-600/20 transition-all text-slate-900 group-hover:text-indigo-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
               </div>
               Поддержка
            </button>
-           <button onClick={() => window.open('https://docs.google.com/document/d/1v9Xv1oX1w1v1v1v1v1v1v1v1v1v1v1v/edit')} className="w-full flex items-center gap-3 text-slate-900 hover:text-white text-[11px] font-black uppercase tracking-widest transition-colors group">
+           <button onClick={() => window.open('https://docs.google.com/document/d/1v9Xv1oX1w1v1v1v1v1v1v1v1v1v1v1v/edit')} className="w-full flex items-center gap-3 text-slate-900 hover:text-black text-[11px] font-black uppercase tracking-widest transition-colors group">
               <div className="w-8 h-8 rounded-xl bg-slate-900 flex items-center justify-center group-hover:bg-emerald-600/20 transition-all text-slate-900 group-hover:text-emerald-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
               </div>
               Документация
            </button>
-           <button onClick={onExit} className="w-full mt-6 py-4 bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-white rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all">Выйти</button>
+           <button onClick={onExit} className="w-full mt-6 py-4 bg-rose-500/10 hover:bg-rose-500 text-rose-500 hover:text-black rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] transition-all">Выйти</button>
         </div>
       </aside>
 
@@ -986,7 +988,7 @@ const renderSettings = () => (
            <div className="flex-grow max-w-2xl relative">
               <input 
                 type="text" placeholder="Быстрый поиск заказов, товаров, клиентов..." 
-                className="w-full pl-14 pr-12 py-3 bg-white/5 border border-white/5 rounded-full text-xs font-bold text-white outline-none focus:bg-white/10 transition-all"
+                className="w-full pl-14 pr-12 py-3 bg-white/5 border border-white/5 rounded-full text-xs font-bold text-black outline-none focus:bg-white/10 transition-all"
               />
               <div className="absolute left-6 top-1/2 -translate-y-1/2 text-slate-900">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -996,21 +998,21 @@ const renderSettings = () => (
            <div className="flex items-center gap-6">
               <div className="flex items-center gap-2">
                  <div className="relative">
-                    <button onClick={() => setShowNotifications(!showNotifications)} className="p-2 text-slate-900 hover:text-white transition-colors relative">
+                    <button onClick={() => setShowNotifications(!showNotifications)} className="p-2 text-slate-900 hover:text-black transition-colors relative">
                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" /></svg>
-                       <span className="absolute top-1 right-1 w-4 h-4 bg-rose-500 text-white text-[8px] font-black rounded-full flex items-center justify-center border-2 border-[#0B1120]">3</span>
+                       <span className="absolute top-1 right-1 w-4 h-4 bg-rose-500 text-black text-[8px] font-black rounded-full flex items-center justify-center border-2 border-[#0B1120]">3</span>
                     </button>
                     {showNotifications && (
                        <div className="absolute top-full right-0 mt-4 w-80 bg-white rounded-3xl border border-white/5 shadow-2xl p-6 z-[200] animate-zoom-in">
                           <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-4">Уведомления</p>
                           <div className="space-y-4">
-                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-rose-500"><p className="text-xs text-white font-bold">Низкий запас товара</p><p className="text-[9px] text-slate-900 mt-1">BALLU BSPR09HN1 - осталось 2 шт.</p></div>
-                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-emerald-500"><p className="text-xs text-white font-bold">Новый заказ #ЗАКАЗ-431</p><p className="text-[9px] text-slate-900 mt-1">Оплачено: 45,000 AMD</p></div>
+                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-rose-500"><p className="text-xs text-black font-bold">Низкий запас товара</p><p className="text-[9px] text-slate-900 mt-1">BALLU BSPR09HN1 - осталось 2 шт.</p></div>
+                             <div className="p-3 bg-black/20 rounded-xl border-l-4 border-emerald-500"><p className="text-xs text-black font-bold">Новый заказ #ЗАКАЗ-431</p><p className="text-[9px] text-slate-900 mt-1">Оплачено: 45,000 AMD</p></div>
                           </div>
                        </div>
                     )}
                  </div>
-                 <button onClick={() => setShowChat(!showChat)} className={`p-2 transition-colors relative ${showChat ? 'text-[#3BB19B]' : 'text-slate-900 hover:text-white'}`}>
+                 <button onClick={() => setShowChat(!showChat)} className={`p-2 transition-colors relative ${showChat ? 'text-[#3BB19B]' : 'text-slate-900 hover:text-black'}`}>
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                     <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-[#0B1120] animate-pulse"></span>
                  </button>
@@ -1018,7 +1020,7 @@ const renderSettings = () => (
               <div className="h-8 w-px bg-white/5" />
               <div className="flex items-center gap-3 pl-2">
                  <div className="text-right hidden sm:block">
-                    <p className="text-xs font-black text-white leading-none mb-1 uppercase tracking-tight">{currentUser.name}</p>
+                    <p className="text-xs font-black text-black leading-none mb-1 uppercase tracking-tight">{currentUser.name}</p>
                     <p className="text-[10px] font-bold text-[#3BB19B] uppercase tracking-widest">{currentUser.role}</p>
                  </div>
                  <div className="w-10 h-10 rounded-2xl overflow-hidden border-2 border-[#3BB19B]/30"><img src={currentUser.avatar} className="w-full h-full object-cover" alt="Admin" /></div>
@@ -1048,11 +1050,11 @@ const renderSettings = () => (
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
                    </div>
                    <div>
-                      <h4 className="text-xs font-black text-white uppercase tracking-widest">Личный Чат</h4>
+                      <h4 className="text-xs font-black text-black uppercase tracking-widest">Личный Чат</h4>
                       <p className="text-[9px] font-bold text-emerald-400 uppercase">Онлайн</p>
                    </div>
                 </div>
-                <button onClick={() => setShowChat(false)} className="text-slate-900 hover:text-white transition-colors">
+                <button onClick={() => setShowChat(false)} className="text-slate-900 hover:text-black transition-colors">
                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
                 </button>
              </div>
@@ -1061,7 +1063,7 @@ const renderSettings = () => (
                 {chatMessages.map(msg => (
                   <div key={msg.id} className={`flex flex-col ${msg.isMe ? 'items-end' : 'items-start'}`}>
                      {!msg.isMe && <span className="text-[8px] font-black text-slate-900 uppercase mb-1 ml-1">{msg.sender}</span>}
-                     <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold ${msg.isMe ? 'bg-indigo-600 text-white rounded-tr-none' : 'bg-slate-900 text-slate-900 border border-white/5 rounded-tl-none'}`}>
+                     <div className={`max-w-[85%] p-3.5 rounded-2xl text-[13px] font-bold ${msg.isMe ? 'bg-indigo-600 text-black rounded-tr-none' : 'bg-slate-900 text-slate-900 border border-white/5 rounded-tl-none'}`}>
                         {msg.text}
                         <div className={`text-[8px] mt-1.5 opacity-50 ${msg.isMe ? 'text-right' : 'text-left'}`}>{msg.time}</div>
                      </div>
@@ -1078,7 +1080,7 @@ const renderSettings = () => (
                       onChange={(e) => setChatInput(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
                       placeholder="Написать сообщение..."
-                      className="w-full py-3 bg-transparent border-none outline-none text-xs font-bold text-white placeholder:text-slate-900"
+                      className="w-full py-3 bg-transparent border-none outline-none text-xs font-bold text-black placeholder:text-slate-900"
                    />
                    <button 
                       onClick={handleSendMessage}
