@@ -979,7 +979,7 @@ const renderSettings = () => (
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="<main className="flex-1 bg-slate-100 p-8 text-black">">
+      <main className="flex-1 bg-slate-100 p-8 text-black">
         
         {/* GLOBAL TOP BAR */}
         <header className="h-20 bg-white border-b border-slate-900 px-10 flex items-center justify-between shrink-0">
