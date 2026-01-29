@@ -924,7 +924,6 @@ const renderSettings = () => (
     </div>
   );
 
-  return (
     return (
   <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-black">
       
