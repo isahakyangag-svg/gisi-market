@@ -61,7 +61,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({ language }) => {
             {messages.map((m, i) => (
               <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                 <div className={`max-w-[85%] p-3 text-sm rounded-2xl shadow-sm ${
-                  m.role === 'user' ? 'bg-indigo-600 text-white rounded-br-none' : 'bg-white text-slate-700 border border-slate-100 rounded-bl-none'
+                  m.role === 'user' ? 'bg-indigo-600 text-white rounded-br-none' : 'bg-white text-slate-900 border border-slate-100 rounded-bl-none'
                 }`}>
                   {m.text}
                 </div>
