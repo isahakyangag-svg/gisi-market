@@ -198,7 +198,7 @@ const handleDeleteProduct = (productId: string) => {
   const renderDashboard = () => (
     <div className="p-8 space-y-6 animate-fade-in overflow-y-auto max-h-screen hide-scrollbar">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group">
+        <div className="bg-white p-6 rounded-3xl border border-white/5 shadow-lg relative overflow-hidden group">
           <p className="text-slate-900 text-xs font-black uppercase tracking-widest mb-2">Общий объем продаж</p>
           <div className="flex items-baseline gap-2">
             <h3 className="text-3xl font-black text-white italic tracking-tighter">{totalRevenue.toLocaleString()} {settings.currency}</h3>
@@ -213,7 +213,7 @@ const handleDeleteProduct = (productId: string) => {
           </div>
         </div>
 
-        <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg">
+        <div className="bg-white p-6 rounded-3xl border border-white/5 shadow-lg">
           <div className="flex justify-between items-start mb-4">
              <p className="text-slate-900 text-xs font-black uppercase tracking-widest">Управление складом</p>
              <button className="text-[10px] text-indigo-400 font-black uppercase hover:underline">Отчет</button>
@@ -230,7 +230,7 @@ const handleDeleteProduct = (productId: string) => {
           </div>
         </div>
 
-        <div className="bg-[#1e2b40] p-6 rounded-3xl border border-white/5 shadow-lg flex flex-col justify-between">
+        <div className="bg-white p-6 rounded-3xl border border-white/5 shadow-lg flex flex-col justify-between">
           <div className="flex justify-between items-start mb-4">
              <p className="text-slate-900 text-xs font-black uppercase tracking-widest">Детали заказа</p>
              <span className="text-[10px] bg-emerald-500/10 text-emerald-500 px-2 py-1 rounded-lg font-black uppercase tracking-widest">Новый Оплачен</span>
@@ -263,7 +263,7 @@ const handleDeleteProduct = (productId: string) => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <div className="lg:col-span-8 bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-xl min-h-[400px]">
+        <div className="lg:col-span-8 bg-white p-8 rounded-[2.5rem] border border-white/5 shadow-xl min-h-[400px]">
            <div className="flex justify-between items-center mb-10">
               <h4 className="text-xl font-black text-white uppercase italic tracking-tighter">Обзор продаж</h4>
               <div className="flex gap-2 bg-slate-900/50 p-1 rounded-xl">
@@ -289,7 +289,7 @@ const handleDeleteProduct = (productId: string) => {
         </div>
 
         <div className="lg:col-span-4 space-y-6">
-           <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
+           <div className="bg-white p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
               <h4 className="text-slate-900 text-xs font-black uppercase tracking-widest mb-8">Топ товаров</h4>
               <div className="space-y-6">
                  {products.slice(0, 3).map(p => (
@@ -307,7 +307,7 @@ const handleDeleteProduct = (productId: string) => {
               </div>
            </div>
 
-           <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
+           <div className="bg-white p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
               <div className="flex justify-between items-center mb-8">
                 <h4 className="text-slate-900 text-xs font-black uppercase tracking-widest">Маркетинг и акции</h4>
               </div>
@@ -391,7 +391,7 @@ const handleDeleteProduct = (productId: string) => {
 
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {banners.sort((a,b) => a.order - b.order).map(banner => (
-            <div key={banner.id} className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 overflow-hidden shadow-xl group">
+            <div key={banner.id} className="bg-white rounded-[2.5rem] border border-white/5 overflow-hidden shadow-xl group">
                <div className="relative aspect-[16/9] bg-black/40">
                   {banner.videoUrl ? (
                     <video src={banner.videoUrl} className="w-full h-full object-cover opacity-60" muted autoPlay loop />
@@ -423,7 +423,7 @@ const handleDeleteProduct = (productId: string) => {
 
        {isBannerModalOpen && editingBanner && (
          <div className="fixed inset-0 z-[2100] flex items-center justify-center p-6 bg-[#0F172A]/80 backdrop-blur-xl animate-fade-in">
-            <div className="bg-[#1e2b40] w-full max-w-5xl rounded-[3rem] shadow-2xl border border-white/5 overflow-hidden flex flex-col max-h-[90vh] animate-zoom-in">
+            <div className="bg-white w-full max-w-5xl rounded-[3rem] shadow-2xl border border-white/5 overflow-hidden flex flex-col max-h-[90vh] animate-zoom-in">
                <div className="px-10 py-8 border-b border-white/5 flex items-center justify-between shrink-0">
                   <div>
                     <h3 className="text-xl font-black text-white italic tracking-tighter uppercase leading-none">Настройка баннера</h3>
@@ -556,12 +556,12 @@ const handleDeleteProduct = (productId: string) => {
           <div className="flex gap-4">
              <input 
                type="text" placeholder="Поиск по ID или имени..." 
-               className="bg-[#1e2b40] border border-white/5 rounded-xl px-4 py-2 text-xs text-white outline-none focus:border-indigo-500" 
+               className="bg-white border border-white/5 rounded-xl px-4 py-2 text-xs text-white outline-none focus:border-indigo-500" 
              />
              <button className="px-6 py-2 bg-indigo-600 text-white rounded-xl text-[10px] font-black uppercase tracking-widest">Экспорт CSV</button>
           </div>
        </div>
-       <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
+       <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
              <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Заказ</th><th className="px-4 py-6">Клиент</th><th className="px-4 py-6">Сумма</th><th className="px-4 py-6">Статус</th><th className="px-8 py-6 text-right">Действия</th></tr>
@@ -591,7 +591,7 @@ const handleDeleteProduct = (productId: string) => {
        <div className="flex justify-between items-center">
           <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Клиенты</h2>
        </div>
-       <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
+       <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
              <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Имя</th><th className="px-4 py-6">Контакты</th><th className="px-4 py-6">Регистрация</th><th className="px-4 py-6">Статус</th><th className="px-8 py-6 text-right">Управление</th></tr>
@@ -628,7 +628,7 @@ const handleDeleteProduct = (productId: string) => {
           >Создать купон</button>
        </div>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="bg-[#1e2b40] p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
+          <div className="bg-white p-8 rounded-[2.5rem] border border-white/5 shadow-lg">
              <h4 className="text-slate-900 text-xs font-bold uppercase tracking-widest mb-6">Активные купоны</h4>
              <div className="space-y-4">
                 {promos.map(p => (
@@ -667,7 +667,7 @@ const handleDeleteProduct = (productId: string) => {
        <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-black text-white tracking-tighter uppercase italic">Складской учёт</h2>
        </div>
-       <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
+       <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
              <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Товар</th><th className="px-4 py-6">SKU</th><th className="px-4 py-6">На складе</th><th className="px-4 py-6">Резерв</th><th className="px-8 py-6 text-right">Статус</th></tr>
@@ -700,7 +700,7 @@ const renderAnalytics = () => (
       Аналитика
     </h2>
 
-    <div className="bg-[#1e2b40] p-10 rounded-[2.5rem] border border-white/5 shadow-xl">
+    <div className="bg-white p-10 rounded-[2.5rem] border border-white/5 shadow-xl">
       <p className="text-slate-900 text-xs font-black uppercase tracking-widest mb-6">
         Общая статистика
       </p>
@@ -746,7 +746,7 @@ const renderSettings = () => (
 
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
       {/* КАРТОЧКА 1 — Основные данные */}
-      <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
+      <div className="bg-white p-10 rounded-[3rem] border border-white/5 space-y-8">
         <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em]">
           Основные данные
         </h4>
@@ -772,7 +772,7 @@ const renderSettings = () => (
       </div>
 
       {/* КАРТОЧКА 2 — ПОДВАЛ САЙТА (ТВОЙ КОД) */}
-      <div className="bg-[#1e2b40] p-10 rounded-[3rem] border border-white/5 space-y-8">
+      <div className="bg-white p-10 rounded-[3rem] border border-white/5 space-y-8">
         <h4 className="text-xs font-black text-slate-900 uppercase tracking-[0.3em]">
           Подвал сайта
         </h4>
@@ -874,7 +874,7 @@ const renderSettings = () => (
             Добавить товар
           </button>
        </div>
-       <div className="bg-[#1e2b40] rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
+       <div className="bg-white rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
           <table className="w-full text-left">
              <thead className="bg-slate-900/40 text-[10px] font-black uppercase text-slate-900 tracking-[0.2em]">
                 <tr><th className="px-8 py-6">Товар</th><th className="px-4 py-6">SKU</th><th className="px-4 py-6">Цена</th><th className="px-4 py-6">Склад</th><th className="px-8 py-6 text-right">Действия</th></tr>
@@ -1001,7 +1001,7 @@ const renderSettings = () => (
                        <span className="absolute top-1 right-1 w-4 h-4 bg-rose-500 text-white text-[8px] font-black rounded-full flex items-center justify-center border-2 border-[#0B1120]">3</span>
                     </button>
                     {showNotifications && (
-                       <div className="absolute top-full right-0 mt-4 w-80 bg-[#1e2b40] rounded-3xl border border-white/5 shadow-2xl p-6 z-[200] animate-zoom-in">
+                       <div className="absolute top-full right-0 mt-4 w-80 bg-white rounded-3xl border border-white/5 shadow-2xl p-6 z-[200] animate-zoom-in">
                           <p className="text-[10px] font-black text-slate-900 uppercase tracking-widest mb-4">Уведомления</p>
                           <div className="space-y-4">
                              <div className="p-3 bg-black/20 rounded-xl border-l-4 border-rose-500"><p className="text-xs text-white font-bold">Низкий запас товара</p><p className="text-[9px] text-slate-900 mt-1">BALLU BSPR09HN1 - осталось 2 шт.</p></div>
@@ -1041,7 +1041,7 @@ const renderSettings = () => (
 
         {/* Admin Chat Overlay */}
         {showChat && (
-          <div className="fixed bottom-10 right-10 w-[400px] h-[600px] bg-[#1e2b40] rounded-[2.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-white/5 flex flex-col z-[3000] animate-zoom-in overflow-hidden">
+          <div className="fixed bottom-10 right-10 w-[400px] h-[600px] bg-white rounded-[2.5rem] shadow-[0_40px_100px_rgba(0,0,0,0.5)] border border-white/5 flex flex-col z-[3000] animate-zoom-in overflow-hidden">
              <div className="p-6 bg-slate-900 flex items-center justify-between shrink-0">
                 <div className="flex items-center gap-3">
                    <div className="w-10 h-10 bg-[#3BB19B]/20 rounded-xl flex items-center justify-center text-emerald-400">
