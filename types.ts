@@ -89,8 +89,6 @@ export interface StoreSettings {
     is2FAEnabled: boolean;
     allowedIPs?: string[];
     loginLogs?: any[];
-      pageBackground?: string;   // фон всего сайта
-  pageTextColor?: string;    // основной цвет текста
   };
   // Added missing properties used in App.tsx
   linkColor?: string;
