@@ -928,7 +928,7 @@ const renderSettings = () => (
   <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-black">
       
       {/* SIDEBAR */}
-      <aside className="w-64 bg-white border-r border-slate-900 flex flex-col shrink-0">
+      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0">
         <div className="p-8 mb-4">
 <button
   onClick={onExit}
@@ -961,7 +961,7 @@ const renderSettings = () => (
            ))}
         </nav>
 
-        <div className="p-6 border-t border-white/5 bg-black/20 space-y-4">
+        <div className="p-6 border-t border-slate-200 bg-white space-y-4">
            <button onClick={() => setShowChat(true)} className="w-full flex items-center gap-3 text-slate-900 hover:text-black text-[11px] font-black uppercase tracking-widest transition-colors group">
               <div className="w-8 h-8 rounded-xl bg-slate-900 flex items-center justify-center group-hover:bg-indigo-600/20 transition-all text-slate-900 group-hover:text-indigo-400">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" /></svg>
@@ -979,7 +979,7 @@ const renderSettings = () => (
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="flex-grow flex flex-col min-w-0 bg-[#0F172A]">
+      <main className="flex-grow flex flex-col min-w-0 bg-white">
         
         {/* GLOBAL TOP BAR */}
         <header className="h-20 bg-white border-b border-slate-900 px-10 flex items-center justify-between shrink-0">
