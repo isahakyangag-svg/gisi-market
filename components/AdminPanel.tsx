@@ -928,7 +928,7 @@ const renderSettings = () => (
   <div className="fixed inset-0 bg-white flex overflow-hidden no-print z-[1000] text-black">
       
       {/* SIDEBAR */}
-      <aside className="w-64 bg-white border-r border-slate-200 flex flex-col shrink-0">
+      <aside className="bg-white text-black border-r border-slate-200">
         <div className="p-8 mb-4">
 <button
   onClick={onExit}
@@ -979,7 +979,7 @@ const renderSettings = () => (
       </aside>
 
       {/* MAIN CONTENT */}
-      <main className="flex-grow flex flex-col min-w-0 bg-white">
+      <main className="<main className="flex-1 bg-slate-100 p-8 text-black">">
         
         {/* GLOBAL TOP BAR */}
         <header className="h-20 bg-white border-b border-slate-900 px-10 flex items-center justify-between shrink-0">
